@@ -6,8 +6,8 @@ Kuidas on Euroopa Keskpanga(EKP) hoiustamise püsivõimaluse intressimäär seot
 
 ## Mõõdikud
 
-1. Sektorite keskmised 30 päeva tootlused peale intressimäära tõusu ja langust - Arvutame iga EKP intressimuutuse järel kui mitu protsenti indeks järgneva 30 päeva jooksul liigub.
-2. Sektorite ja EKP hoiustamise püsivõimaluse intressimäära muutuste rolling korrelatsioonid - 
+1. Kirjeldav graafik kus on välja toodud indeksite hinnad ning intressimäärade tase vaadeldaval perioodil.
+2. Sektorite keskmised 30 päeva tootlused peale intressimäära tõusu ja langust - Arvutame iga EKP intressimuutuse järel kui mitu protsenti indeks järgneva 30 päeva jooksul liigub.
 3. Sektorite intressitundlikkuse beetad - Lineaarse regressiooniga hindame, kui palju liigub sektor 1 baaspunkti suuruse intressimuutuse korral.
 
 
