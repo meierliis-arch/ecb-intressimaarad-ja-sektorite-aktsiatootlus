@@ -2,13 +2,13 @@
 
 ## Äriküsimus
 
-Kuidas on Euroopa Keskpanga hoiustamise püsivõimaluse intressimäär seotud Euroopa erinevate sektorite indeksfondide tootlustega?
+Kuidas on Euroopa Keskpanga(EKP) hoiustamise püsivõimaluse intressimäär seotud Euroopa erinevate sektorite indeksfondide tootlustega?
 
 ## Mõõdikud
 
-1. Sektorite keskmised 30 päeva tootlused peale intressimäära tõusu ja langust
-2. Sektorite ja EKP hoiustamise püsivõimaluse intressimäära muutuste rolling korrelatsioonid
-3. Sektorite intressitundlikkuse beetad
+1. Sektorite keskmised 30 päeva tootlused peale intressimäära tõusu ja langust - Arvutame iga EKP intressimuutuse järel kui mitu protsenti indeks järgneva 30 päeva jooksul liigub.
+2. Sektorite ja EKP hoiustamise püsivõimaluse intressimäära muutuste rolling korrelatsioonid - 
+3. Sektorite intressitundlikkuse beetad - Lineaarse regressiooniga hindame, kui palju liigub sektor 1 baaspunkti suuruse intressimuutuse korral.
 
 
 ## Andmeallikad
