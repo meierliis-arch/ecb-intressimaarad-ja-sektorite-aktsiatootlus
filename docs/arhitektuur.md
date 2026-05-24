@@ -33,7 +33,6 @@ flowchart LR
     int_ret -->|dbt marts| mart_post30[(marts.post_event_returns)]
     int_ret -->|dbt marts| mart_beta[(marts.sector_betas)]
     int_al --> mart_post30
-    int_al --> mart_corr
     int_al --> mart_beta
     mart_post30 --> superset[Superset näidikulaud]
     mart_beta --> superset
