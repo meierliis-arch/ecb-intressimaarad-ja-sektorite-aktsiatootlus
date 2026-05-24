@@ -31,13 +31,11 @@ flowchart LR
     stg_p -->|dbt intermediate| int_ret[(intermediate.sector_returns)]
     stg_r -->|dbt intermediate| int_al[(intermediate.aligned_ecb_rates)]
     int_ret -->|dbt marts| mart_post30[(marts.post_event_returns)]
-    int_ret -->|dbt marts| mart_corr[(marts.rolling_correlation)]
     int_ret -->|dbt marts| mart_beta[(marts.sector_betas)]
     int_al --> mart_post30
     int_al --> mart_corr
     int_al --> mart_beta
     mart_post30 --> superset[Superset näidikulaud]
-    mart_corr --> superset
     mart_beta --> superset
     airflow[Airflow scheduler] -->|"@daily"| yf
     airflow -->|"@daily"| ecb
