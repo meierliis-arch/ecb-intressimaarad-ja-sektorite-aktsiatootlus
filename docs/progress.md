@@ -1,8 +1,5 @@
 # Edenemisraport
 
-
-# NB! Vajab üle vaatamist!!!
-
 ## Mis on valmis
 
 - [x] Docker Compose käivitab kõik teenused (analytics-db, Airflow, Superset)
@@ -12,10 +9,18 @@
 - [x] dbt staging mudelid (`stg_ecb_rates`, `stg_index_prices`) deduplitseerivad toorandmed
 - [x] dbt intermediate mudelid (`int_sector_returns`, `int_aligned_ecb_rates`) on kirjutatud
 - [x] dbt mart mudelid on kirjutatud — kolm analüütilist tabelit vastavalt arhitektuuridokumendi kolmele mõõdikule
-- [x] dbt alaptestid (not_null, unique) on `schema.yml` failides defineeritud
+- [x] dbt esialgsed testid (not_null, unique) on `schema.yml` failides defineeritud
 - [x] Sektori dimensioonitabel (`dim_sectors`) kasutab `valid_from`/`valid_to` struktuuri
-- [ ] Kogu andmevoog on reaalselt käivitatud ja verifitseeritud (testimisel)
-- [ ] Vähemalt üks näidikulaud on Supersetis nähtaval (vaja Supersetis käsitsi luua)
+- [x] Kogu andmevoog on reaalselt käivitatud ja testitud (korduvalt)
+- [x] Vähemalt üks näidikulaud on Supersetis nähtaval (imporditud automaatselt)
+
+
+## Järgnevad sammud:
+- dbt testide sisustamine ja täiendamine
+- visuaalide sisustamine ja täiendamine
+
+
+
 
 ## Juhis dockeri käivitamiseks
 
@@ -38,9 +43,6 @@
 - Vaadata üle dbt testi tulemused, lisada puuduvad kvaliteedikontrollid (Kerttu)
 - Täiendada Superset dashboard kõigi kolme mõõdikuga (Liis)
 
-## Mis takistab
-# TO BE ANNOUNCED
-- Kui port 8080 või 8088 on hõivatud, muuda `.env` failis `AIRFLOW_PORT_HOST` ja `SUPERSET_PORT_HOST`
 
 ## Kontrollpunkt
 
