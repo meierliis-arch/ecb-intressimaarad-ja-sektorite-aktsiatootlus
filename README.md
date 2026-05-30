@@ -33,7 +33,7 @@ Kõik komponendid käivituvad Dockeris — dbt ega Airflow'i ei pea kohalikult p
 
 ## Andmevoog lühidalt
 
-1. **Seemestamine** — `dbt seed` laadib `dim_sectors.csv` → `marts.dim_sectors` (19 aktiivset tickerit).
+1. **Seed andmete laadimine** — `dbt seed` laadib `dim_sectors.csv` → `marts.dim_sectors` (19 aktiivset tickerit).
 2. **Sissevõtt (paralleelselt)** — Airflow tõmbab ECB intressimäärad REST API-st ja Yahoo Finance'ist ETF-ide päevahinnad.
 3. **Laadimine** — Andmed kirjutatakse staging toorandmete tabelitesse (`append-only`; iga käivitus saab unikaalse `run_id`).
 4. **Transformatsioon** — `dbt run` ehitab staging vaated → intermediate vaated → marts tabelid.
