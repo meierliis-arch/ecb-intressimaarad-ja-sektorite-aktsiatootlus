@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: staging
+    schema: staging
+    description: "Raw append-only tables written by Airflow. Each DAG run gets a unique run_id."
+    tables:
+      - name: ecb_rates_raw
+        description: >
+          Raw ECB deposit facility rate history fetched from the ECB SDMX REST API.
+          Full history is re-inserted on every run — deduplication happens in stg_ecb_rates.
+        columns:
+          - name: run_id
+            description: "UUID linking this row to staging.pipeline_runs"
+          - name: date_ref
+            description: "Date the ECB rate decision took effect"
+          - name: rate_pct
+            description: "Deposit facility rate in percent (e.g. 4.00 = 4%)"
+
+      - name: index_prices_raw
+        description: >
+          Raw daily OHLCV price data for STOXX Europe 600 sector ETFs fetched from yfinance.
+          Only new trading days are added on each run (incremental), with a 5-day overlap.
+          Deduplication happens in stg_index_prices.
+        columns:
+          - name: run_id
+            description: "UUID linking this row to staging.pipeline_runs"
+          - name: ticker
+            description: "ETF ticker symbol (e.g. EXV1.DE)"
+          - name: price_date
+            description: "Trading day"
+          - name: close_price
+            description: "Adjusted closing price — primary input for return calculations"

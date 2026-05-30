@@ -1,0 +1,25 @@
+name: ecb_sektorid
+version: "1.0.0"
+profile: ecb_sektorid
+
+model-paths: ["models"]
+seed-paths:  ["seeds"]
+macro-paths: ["macros"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+seeds:
+  ecb_sektorid:
+    +schema: marts        # seeds lähevad marts skeemi (marts.dim_indeksid)
+
+models:
+  ecb_sektorid:
+    staging:
+      +materialized: view   # Kerged puhastusvaated, ei salvesta andmeid
+      +schema: staging
+    intermediate:
+      +materialized: view   # Vahearvutused, ei salvesta andmeid
+      +schema: intermediate
+    marts:
+      +materialized: table  # Lõpptulemused talletatakse tabelitena Superset jaoks
+      +schema: marts

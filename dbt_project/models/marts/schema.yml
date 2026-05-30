@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: mart_prices_and_rates
+    description: >
+      Metric 1: Daily closing prices for all active sector ETFs with the
+      ECB deposit facility rate forward-filled to each trading day.
+      Primary input for the descriptive time-series chart in Superset.
+    columns:
+      - name: price_date
+        tests: [not_null]
+      - name: ticker
+        tests: [not_null]
+      - name: close_price
+        tests: [not_null]
+
+  - name: mart_post_event_returns
+    description: >
+      Metric 2: Cumulative sector returns in the 30 calendar days following
+      each ECB deposit facility rate change. One row per (event_date, ticker).
+    columns:
+      - name: event_date
+        tests: [not_null]
+      - name: ticker
+        tests: [not_null]
+      - name: rate_change_bp
+        tests: [not_null]
+      - name: cumulative_return_30d_pct
+        tests: [not_null]
+
+  - name: mart_sector_betas
+    description: >
+      Metric 3: OLS beta coefficient per sector — sensitivity of 30-day post-event
+      returns to a 1 basis point rate change. One row per sector (ticker).
+    columns:
+      - name: ticker
+        tests: [not_null, unique]
+      - name: event_count
+        tests: [not_null]

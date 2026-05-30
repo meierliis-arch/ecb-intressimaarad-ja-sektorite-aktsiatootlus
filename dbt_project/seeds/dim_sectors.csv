@@ -1,0 +1,20 @@
+ticker,sector_name,valid_from,valid_to
+EXV1.DE,Banks,1999-01-01,9999-01-01
+EXV2.DE,Telecommunications,1999-01-01,9999-01-01
+EXV3.DE,Technology,1999-01-01,9999-01-01
+EXV4.DE,Health Care,1999-01-01,9999-01-01
+EXV5.DE,Automobiles & Parts,1999-01-01,9999-01-01
+EXV6.DE,Basic Resources,1999-01-01,9999-01-01
+EXV7.DE,Chemicals,1999-01-01,9999-01-01
+EXV8.DE,Construction & Materials,1999-01-01,9999-01-01
+EXV9.DE,Travel & Leisure,1999-01-01,9999-01-01
+EXH1.DE,Oil & Gas,1999-01-01,9999-01-01
+EXH2.DE,Financial Services,1999-01-01,9999-01-01
+EXH3.DE,Food & Beverage,1999-01-01,9999-01-01
+EXH4.DE,Industrial Goods & Services,1999-01-01,9999-01-01
+EXH5.DE,Insurance,1999-01-01,9999-01-01
+EXH6.DE,Media,1999-01-01,9999-01-01
+EXH7.DE,Personal & Household Goods,1999-01-01,9999-01-01
+EXH8.DE,Retail,1999-01-01,9999-01-01
+EXH9.DE,Utilities,1999-01-01,9999-01-01
+EXI5.DE,Real Estate,1999-01-01,9999-01-01

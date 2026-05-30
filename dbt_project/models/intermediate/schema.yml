@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: int_sector_returns
+    description: >
+      Daily percentage returns for each sector ETF, calculated from adjusted closing prices.
+      One row per (ticker, price_date). First trading day per ticker is excluded (no prior close).
+    columns:
+      - name: ticker
+        tests: [not_null]
+      - name: price_date
+        tests: [not_null]
+      - name: daily_return_pct
+        tests: [not_null]
+
+  - name: int_aligned_ecb_rates
+    description: >
+      ECB deposit facility rate forward-filled to every trading day (LOCF).
+      One row per trading day. Days before the first ECB data point are excluded.
+    columns:
+      - name: price_date
+        tests: [not_null, unique]
+      - name: ecb_rate_pct
+        tests: [not_null]

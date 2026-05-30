@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: stg_ecb_rates
+    description: "Deduplicated ECB deposit facility rate history. One row per decision date."
+    columns:
+      - name: date_ref
+        description: "Date the ECB rate decision took effect"
+        tests:
+          - not_null
+          - unique
+      - name: rate_pct
+        description: "Deposit facility rate in percent"
+        tests:
+          - not_null
+
+  - name: stg_index_prices
+    description: "Deduplicated daily closing prices for STOXX Europe 600 sector ETFs."
+    columns:
+      - name: ticker
+        description: "ETF ticker symbol"
+        tests:
+          - not_null
+      - name: price_date
+        description: "Trading day"
+        tests:
+          - not_null
+      - name: close_price
+        description: "Adjusted closing price"
+        tests:
+          - not_null

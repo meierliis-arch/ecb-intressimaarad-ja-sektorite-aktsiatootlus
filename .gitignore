@@ -1,0 +1,24 @@
+# Keskkonnamuutujad — EI tohi GitHubi minna
+.env
+
+# dbt
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/logs/
+
+# Airflow
+airflow/logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
