@@ -14712,3 +14712,2086 @@ having count(*) > 1
 [0m16:44:01.932175 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffab38eba0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa94585f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa88ac470>]}
 [0m16:44:01.932358 [debug] [MainThread]: Flushing usage events
 [0m16:44:02.529134 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:11:00.465583 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7c4e5250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7c6d3200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7cc318b0>]}
+
+
+============================== 18:11:00.467587 | 9d9cbe3b-1174-496c-88be-13ae033c7ac8 ==============================
+[0m18:11:00.467587 [info ] [MainThread]: Running with dbt=1.12.0-b1
+[0m18:11:00.467936 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'target_path': 'None', 'introspect': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'empty': 'False', 'debug': 'False', 'profiles_dir': '.', 'static_parser': 'True', 'log_cache_events': 'False', 'version_check': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt seed --profiles-dir .', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'use_colors': 'True', 'no_print': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'printer_width': '80'}
+[0m18:11:00.577486 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9d9cbe3b-1174-496c-88be-13ae033c7ac8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7da53b90>]}
+[0m18:11:00.602325 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9d9cbe3b-1174-496c-88be-13ae033c7ac8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7ac9b500>]}
+[0m18:11:00.602825 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m18:11:00.633456 [debug] [MainThread]: checksum: 62a73b174547631363f3141a0c8751bab0a1683fed691bc8abe890bf0173e884, vars: {}, profile: ecb_sektorid, target: dev, version: 1.12.0b1
+[0m18:11:00.701914 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:11:00.702169 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m18:11:00.702357 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:11:00.726909 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9d9cbe3b-1174-496c-88be-13ae033c7ac8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff79be0e90>]}
+[0m18:11:00.774947 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m18:11:00.776469 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m18:11:00.782025 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9d9cbe3b-1174-496c-88be-13ae033c7ac8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7968d280>]}
+[0m18:11:00.782256 [info ] [MainThread]: Found 7 models, 1 seed, 22 data tests, 2 sources, 476 macros
+[0m18:11:00.782510 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9d9cbe3b-1174-496c-88be-13ae033c7ac8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7969b7a0>]}
+[0m18:11:00.783446 [info ] [MainThread]: 
+[0m18:11:00.783637 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m18:11:00.783784 [info ] [MainThread]: 
+[0m18:11:00.784025 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m18:11:00.784475 [debug] [ThreadPool]: Acquiring new postgres connection 'list_praktikum'
+[0m18:11:00.800603 [debug] [ThreadPool]: Using postgres connection "list_praktikum"
+[0m18:11:00.800810 [debug] [ThreadPool]: On list_praktikum: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "connection_name": "list_praktikum"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m18:11:00.800943 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:11:00.805989 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.005 seconds
+[0m18:11:00.806727 [debug] [ThreadPool]: On list_praktikum: Close
+[0m18:11:00.809044 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_praktikum, now list_praktikum_marts)
+[0m18:11:00.811752 [debug] [ThreadPool]: Using postgres connection "list_praktikum_marts"
+[0m18:11:00.811993 [debug] [ThreadPool]: Acquiring new postgres connection 'list_praktikum_staging'
+[0m18:11:00.812195 [debug] [ThreadPool]: On list_praktikum_marts: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "connection_name": "list_praktikum_marts"} */
+select
+      'praktikum' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'marts'
+    union all
+    select
+      'praktikum' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'marts'
+    union all
+    select
+      'praktikum' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'marts'
+  
+[0m18:11:00.813017 [debug] [ThreadPool]: Using postgres connection "list_praktikum_staging"
+[0m18:11:00.813210 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:11:00.813404 [debug] [ThreadPool]: On list_praktikum_staging: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "connection_name": "list_praktikum_staging"} */
+select
+      'praktikum' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'staging'
+    union all
+    select
+      'praktikum' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'staging'
+    union all
+    select
+      'praktikum' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'staging'
+  
+[0m18:11:00.813633 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:11:00.818191 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.005 seconds
+[0m18:11:00.818397 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.005 seconds
+[0m18:11:00.818962 [debug] [ThreadPool]: On list_praktikum_staging: ROLLBACK
+[0m18:11:00.819456 [debug] [ThreadPool]: On list_praktikum_marts: ROLLBACK
+[0m18:11:00.819702 [debug] [ThreadPool]: On list_praktikum_staging: Close
+[0m18:11:00.819851 [debug] [ThreadPool]: On list_praktikum_marts: Close
+[0m18:11:00.820113 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_praktikum_staging, now list_praktikum_intermediate)
+[0m18:11:00.821284 [debug] [ThreadPool]: Using postgres connection "list_praktikum_intermediate"
+[0m18:11:00.821449 [debug] [ThreadPool]: On list_praktikum_intermediate: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "connection_name": "list_praktikum_intermediate"} */
+select
+      'praktikum' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'intermediate'
+    union all
+    select
+      'praktikum' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'intermediate'
+    union all
+    select
+      'praktikum' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'intermediate'
+  
+[0m18:11:00.821640 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:11:00.825311 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.004 seconds
+[0m18:11:00.825812 [debug] [ThreadPool]: On list_praktikum_intermediate: ROLLBACK
+[0m18:11:00.826005 [debug] [ThreadPool]: On list_praktikum_intermediate: Close
+[0m18:11:00.827916 [debug] [MainThread]: Using postgres connection "master"
+[0m18:11:00.828110 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m18:11:00.828283 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:11:00.832907 [debug] [MainThread]: SQL status: SELECT 0 in 0.005 seconds
+[0m18:11:00.833390 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9d9cbe3b-1174-496c-88be-13ae033c7ac8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff79c2f260>]}
+[0m18:11:00.833609 [debug] [MainThread]: On master: ROLLBACK
+[0m18:11:00.833805 [debug] [MainThread]: On master: COMMIT
+[0m18:11:00.833958 [debug] [MainThread]: Using postgres connection "master"
+[0m18:11:00.834116 [debug] [MainThread]: On master: COMMIT
+[0m18:11:00.834343 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m18:11:00.834484 [debug] [MainThread]: On master: Close
+[0m18:11:00.837150 [debug] [Thread-1 (]: Began running node seed.ecb_sektorid.dim_sectors
+[0m18:11:00.837424 [info ] [Thread-1 (]: 1 of 1 START seed file marts.dim_sectors ....................................... [RUN]
+[0m18:11:00.837640 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_praktikum_intermediate, now seed.ecb_sektorid.dim_sectors)
+[0m18:11:00.837812 [debug] [Thread-1 (]: Began compiling node seed.ecb_sektorid.dim_sectors
+[0m18:11:00.837992 [debug] [Thread-1 (]: Began executing node seed.ecb_sektorid.dim_sectors
+[0m18:11:00.849843 [debug] [Thread-1 (]: Using postgres connection "seed.ecb_sektorid.dim_sectors"
+[0m18:11:00.850051 [debug] [Thread-1 (]: On seed.ecb_sektorid.dim_sectors: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "seed.ecb_sektorid.dim_sectors"} */
+
+    create table "praktikum"."marts"."dim_sectors" ("ticker" text,"sector_name" text,"valid_from" date,"valid_to" date)
+  
+[0m18:11:00.850263 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:11:00.854304 [debug] [Thread-1 (]: SQL status: CREATE TABLE in 0.004 seconds
+[0m18:11:00.887389 [debug] [Thread-1 (]: Using postgres connection "seed.ecb_sektorid.dim_sectors"
+[0m18:11:00.887703 [debug] [Thread-1 (]: On seed.ecb_sektorid.dim_sectors: 
+          insert into "praktikum"."marts"."dim_sectors" ("ticker", "sector_name", "valid_from", "valid_to") values
+          (%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s)
+      ...
+[0m18:11:00.888324 [debug] [Thread-1 (]: SQL status: INSERT 0 19 in 0.000 seconds
+[0m18:11:00.890513 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.ecb_sektorid.dim_sectors"
+[0m18:11:00.899908 [debug] [Thread-1 (]: On seed.ecb_sektorid.dim_sectors: COMMIT
+[0m18:11:00.900161 [debug] [Thread-1 (]: Using postgres connection "seed.ecb_sektorid.dim_sectors"
+[0m18:11:00.900366 [debug] [Thread-1 (]: On seed.ecb_sektorid.dim_sectors: COMMIT
+[0m18:11:00.901045 [debug] [Thread-1 (]: SQL status: COMMIT in 0.000 seconds
+[0m18:11:00.901823 [debug] [Thread-1 (]: On seed.ecb_sektorid.dim_sectors: Close
+[0m18:11:00.902609 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9d9cbe3b-1174-496c-88be-13ae033c7ac8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7968c1a0>]}
+[0m18:11:00.902871 [info ] [Thread-1 (]: 1 of 1 OK loaded seed file marts.dim_sectors ................................... [[32mINSERT 19[0m in 0.06s]
+[0m18:11:00.903139 [debug] [Thread-1 (]: Finished running node seed.ecb_sektorid.dim_sectors
+[0m18:11:00.903963 [debug] [MainThread]: On master: COMMIT
+[0m18:11:00.904133 [debug] [MainThread]: Using postgres connection "master"
+[0m18:11:00.904283 [debug] [MainThread]: On master: COMMIT
+[0m18:11:00.904414 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:11:00.907496 [debug] [MainThread]: SQL status: COMMIT in 0.003 seconds
+[0m18:11:00.907669 [debug] [MainThread]: On master: Close
+[0m18:11:00.907861 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:11:00.907998 [debug] [MainThread]: Connection 'list_praktikum_marts' was properly closed.
+[0m18:11:00.908129 [debug] [MainThread]: Connection 'seed.ecb_sektorid.dim_sectors' was properly closed.
+[0m18:11:00.908271 [info ] [MainThread]: 
+[0m18:11:00.908446 [info ] [MainThread]: Finished running 1 seed in 0 hours 0 minutes and 0.12 seconds (0.12s).
+[0m18:11:00.908780 [debug] [MainThread]: Command end result
+[0m18:11:00.923819 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m18:11:00.925034 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m18:11:00.928367 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m18:11:00.928537 [info ] [MainThread]: 
+[0m18:11:00.928721 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:11:00.928881 [info ] [MainThread]: 
+[0m18:11:00.929056 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m18:11:00.929480 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 0.4914561, "process_in_blocks": "8736", "process_kernel_time": 0.075361, "process_mem_max_rss": "139360", "process_out_blocks": "4062", "process_user_time": 1.000803}
+[0m18:11:00.929701 [debug] [MainThread]: Command `dbt seed` succeeded at 18:11:00.929669 after 0.49 seconds
+[0m18:11:00.929851 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7f7d76b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7b030f20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7b675460>]}
+[0m18:11:00.930000 [debug] [MainThread]: Flushing usage events
+[0m18:11:01.647906 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:12:32.018071 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb40ba090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb6a47380>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb425b620>]}
+
+
+============================== 18:12:32.019574 | 2359fbcd-02da-4ef4-a001-339c5aac6c8b ==============================
+[0m18:12:32.019574 [info ] [MainThread]: Running with dbt=1.12.0-b1
+[0m18:12:32.019920 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'log_format': 'default', 'log_path': '/opt/airflow/dbt_project/logs', 'log_cache_events': 'False', 'write_json': 'True', 'fail_fast': 'False', 'no_print': 'None', 'partial_parse': 'True', 'version_check': 'True', 'invocation_command': 'dbt run --profiles-dir .', 'empty': 'False', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'profiles_dir': '.', 'quiet': 'False', 'static_parser': 'True', 'cache_selected_only': 'False', 'introspect': 'True', 'target_path': 'None', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'indirect_selection': 'eager'}
+[0m18:12:32.088145 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2359fbcd-02da-4ef4-a001-339c5aac6c8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb3880200>]}
+[0m18:12:32.112304 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2359fbcd-02da-4ef4-a001-339c5aac6c8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb3939e20>]}
+[0m18:12:32.112830 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m18:12:32.141117 [debug] [MainThread]: checksum: 62a73b174547631363f3141a0c8751bab0a1683fed691bc8abe890bf0173e884, vars: {}, profile: ecb_sektorid, target: dev, version: 1.12.0b1
+[0m18:12:32.207365 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:12:32.207602 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m18:12:32.207779 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:12:32.231493 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2359fbcd-02da-4ef4-a001-339c5aac6c8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb28b74a0>]}
+[0m18:12:32.277872 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m18:12:32.279149 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m18:12:32.284385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '2359fbcd-02da-4ef4-a001-339c5aac6c8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb24e1820>]}
+[0m18:12:32.284621 [info ] [MainThread]: Found 7 models, 1 seed, 22 data tests, 2 sources, 476 macros
+[0m18:12:32.284907 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2359fbcd-02da-4ef4-a001-339c5aac6c8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb2314560>]}
+[0m18:12:32.285859 [info ] [MainThread]: 
+[0m18:12:32.286071 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m18:12:32.286251 [info ] [MainThread]: 
+[0m18:12:32.286526 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m18:12:32.288316 [debug] [ThreadPool]: Acquiring new postgres connection 'list_praktikum'
+[0m18:12:32.293435 [debug] [ThreadPool]: Acquiring new postgres connection 'list_praktikum'
+[0m18:12:32.302586 [debug] [ThreadPool]: Using postgres connection "list_praktikum"
+[0m18:12:32.302783 [debug] [ThreadPool]: Using postgres connection "list_praktikum"
+[0m18:12:32.302965 [debug] [ThreadPool]: On list_praktikum: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "connection_name": "list_praktikum"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m18:12:32.303172 [debug] [ThreadPool]: On list_praktikum: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "connection_name": "list_praktikum"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m18:12:32.303365 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:12:32.303550 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:12:32.308614 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.005 seconds
+[0m18:12:32.308800 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.005 seconds
+[0m18:12:32.309324 [debug] [ThreadPool]: On list_praktikum: Close
+[0m18:12:32.309812 [debug] [ThreadPool]: On list_praktikum: Close
+[0m18:12:32.310933 [debug] [ThreadPool]: Using postgres connection "list_praktikum"
+[0m18:12:32.311313 [debug] [ThreadPool]: On list_praktikum: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "connection_name": "list_praktikum"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m18:12:32.311509 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:12:32.314790 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.003 seconds
+[0m18:12:32.315369 [debug] [ThreadPool]: On list_praktikum: Close
+[0m18:12:32.316201 [debug] [ThreadPool]: Acquiring new postgres connection 'list_praktikum_staging'
+[0m18:12:32.318642 [debug] [ThreadPool]: Using postgres connection "list_praktikum_staging"
+[0m18:12:32.318856 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_praktikum, now list_praktikum_intermediate)
+[0m18:12:32.319049 [debug] [ThreadPool]: On list_praktikum_staging: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "connection_name": "list_praktikum_staging"} */
+select
+      'praktikum' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'staging'
+    union all
+    select
+      'praktikum' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'staging'
+    union all
+    select
+      'praktikum' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'staging'
+  
+[0m18:12:32.319816 [debug] [ThreadPool]: Using postgres connection "list_praktikum_intermediate"
+[0m18:12:32.320006 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:12:32.320189 [debug] [ThreadPool]: On list_praktikum_intermediate: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "connection_name": "list_praktikum_intermediate"} */
+select
+      'praktikum' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'intermediate'
+    union all
+    select
+      'praktikum' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'intermediate'
+    union all
+    select
+      'praktikum' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'intermediate'
+  
+[0m18:12:32.320454 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:12:32.324449 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.004 seconds
+[0m18:12:32.324606 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.004 seconds
+[0m18:12:32.325162 [debug] [ThreadPool]: On list_praktikum_staging: ROLLBACK
+[0m18:12:32.325672 [debug] [ThreadPool]: On list_praktikum_intermediate: ROLLBACK
+[0m18:12:32.325896 [debug] [ThreadPool]: On list_praktikum_staging: Close
+[0m18:12:32.326094 [debug] [ThreadPool]: On list_praktikum_intermediate: Close
+[0m18:12:32.326309 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_praktikum_staging, now list_praktikum_marts)
+[0m18:12:32.328111 [debug] [ThreadPool]: Using postgres connection "list_praktikum_marts"
+[0m18:12:32.328276 [debug] [ThreadPool]: On list_praktikum_marts: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "connection_name": "list_praktikum_marts"} */
+select
+      'praktikum' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'marts'
+    union all
+    select
+      'praktikum' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'marts'
+    union all
+    select
+      'praktikum' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'marts'
+  
+[0m18:12:32.328440 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:12:32.331935 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.003 seconds
+[0m18:12:32.332437 [debug] [ThreadPool]: On list_praktikum_marts: ROLLBACK
+[0m18:12:32.332633 [debug] [ThreadPool]: On list_praktikum_marts: Close
+[0m18:12:32.359108 [debug] [MainThread]: Using postgres connection "master"
+[0m18:12:32.359397 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m18:12:32.359625 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:12:32.363839 [debug] [MainThread]: SQL status: SELECT 0 in 0.004 seconds
+[0m18:12:32.364405 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2359fbcd-02da-4ef4-a001-339c5aac6c8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb37b2750>]}
+[0m18:12:32.364634 [debug] [MainThread]: On master: ROLLBACK
+[0m18:12:32.364841 [debug] [MainThread]: On master: COMMIT
+[0m18:12:32.365023 [debug] [MainThread]: Using postgres connection "master"
+[0m18:12:32.365181 [debug] [MainThread]: On master: COMMIT
+[0m18:12:32.365403 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m18:12:32.365555 [debug] [MainThread]: On master: Close
+[0m18:12:32.366715 [debug] [Thread-1 (]: Began running node model.ecb_sektorid.stg_ecb_rates
+[0m18:12:32.366908 [debug] [Thread-2 (]: Began running node model.ecb_sektorid.stg_index_prices
+[0m18:12:32.367169 [info ] [Thread-1 (]: 1 of 7 START sql view model staging.stg_ecb_rates .............................. [RUN]
+[0m18:12:32.367450 [info ] [Thread-2 (]: 2 of 7 START sql view model staging.stg_index_prices ........................... [RUN]
+[0m18:12:32.367730 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_praktikum_marts, now model.ecb_sektorid.stg_ecb_rates)
+[0m18:12:32.367924 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_praktikum_intermediate, now model.ecb_sektorid.stg_index_prices)
+[0m18:12:32.368153 [debug] [Thread-1 (]: Began compiling node model.ecb_sektorid.stg_ecb_rates
+[0m18:12:32.368332 [debug] [Thread-2 (]: Began compiling node model.ecb_sektorid.stg_index_prices
+[0m18:12:32.371288 [debug] [Thread-1 (]: Writing injected SQL for node "model.ecb_sektorid.stg_ecb_rates"
+[0m18:12:32.372399 [debug] [Thread-2 (]: Writing injected SQL for node "model.ecb_sektorid.stg_index_prices"
+[0m18:12:32.374484 [debug] [Thread-2 (]: Began executing node model.ecb_sektorid.stg_index_prices
+[0m18:12:32.374661 [debug] [Thread-1 (]: Began executing node model.ecb_sektorid.stg_ecb_rates
+[0m18:12:32.388083 [debug] [Thread-2 (]: Writing runtime sql for node "model.ecb_sektorid.stg_index_prices"
+[0m18:12:32.389348 [debug] [Thread-1 (]: Writing runtime sql for node "model.ecb_sektorid.stg_ecb_rates"
+[0m18:12:32.390206 [debug] [Thread-1 (]: Using postgres connection "model.ecb_sektorid.stg_ecb_rates"
+[0m18:12:32.390406 [debug] [Thread-2 (]: Using postgres connection "model.ecb_sektorid.stg_index_prices"
+[0m18:12:32.390759 [debug] [Thread-2 (]: On model.ecb_sektorid.stg_index_prices: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.stg_index_prices"} */
+
+  create view "praktikum"."staging"."stg_index_prices__dbt_tmp"
+    
+    
+  as (
+    -- stg_index_prices
+--
+-- Cleans and deduplicates the raw index price table.
+-- Incremental fetches include a 5-day overlap, so the same (ticker, price_date)
+-- can appear under multiple run_ids. We keep only the most recently fetched version.
+
+with source as (
+    select * from "praktikum"."staging"."index_prices_raw"
+),
+
+deduplicated as (
+    select
+        ticker,
+        price_date,
+        open_price,
+        high_price,
+        low_price,
+        close_price,
+        volume,
+        fetched_at,
+        row_number() over (
+            partition by ticker, price_date
+            order by fetched_at desc
+        ) as row_num
+    from source
+)
+
+select
+    ticker,
+    price_date,
+    open_price,
+    high_price,
+    low_price,
+    close_price,
+    volume,
+    fetched_at
+from deduplicated
+where row_num = 1
+  and close_price is not null
+  );
+[0m18:12:32.390562 [debug] [Thread-1 (]: On model.ecb_sektorid.stg_ecb_rates: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.stg_ecb_rates"} */
+
+  create view "praktikum"."staging"."stg_ecb_rates__dbt_tmp"
+    
+    
+  as (
+    -- stg_ecb_rates
+--
+-- Cleans and deduplicates the raw ECB rate table.
+-- Since the full history is re-inserted on every Airflow run (append-only),
+-- the same date_ref can appear multiple times with different run_ids.
+-- We keep only the most recently fetched version of each date.
+
+with source as (
+    select * from "praktikum"."staging"."ecb_rates_raw"
+),
+
+deduplicated as (
+    select
+        date_ref,
+        rate_pct,
+        fetched_at,
+        row_number() over (
+            partition by date_ref
+            order by fetched_at desc
+        ) as row_num
+    from source
+)
+
+select
+    date_ref,
+    rate_pct,
+    fetched_at
+from deduplicated
+where row_num = 1
+  );
+[0m18:12:32.391096 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:32.390955 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:12:32.395146 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.004 seconds
+[0m18:12:32.397668 [debug] [Thread-1 (]: Using postgres connection "model.ecb_sektorid.stg_ecb_rates"
+[0m18:12:32.397984 [debug] [Thread-1 (]: On model.ecb_sektorid.stg_ecb_rates: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.stg_ecb_rates"} */
+alter table "praktikum"."staging"."stg_ecb_rates__dbt_tmp" rename to "stg_ecb_rates"
+[0m18:12:32.397826 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.007 seconds
+[0m18:12:32.399111 [debug] [Thread-2 (]: Using postgres connection "model.ecb_sektorid.stg_index_prices"
+[0m18:12:32.399412 [debug] [Thread-2 (]: On model.ecb_sektorid.stg_index_prices: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.stg_index_prices"} */
+alter table "praktikum"."staging"."stg_index_prices__dbt_tmp" rename to "stg_index_prices"
+[0m18:12:32.399279 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m18:12:32.406079 [debug] [Thread-1 (]: On model.ecb_sektorid.stg_ecb_rates: COMMIT
+[0m18:12:32.406398 [debug] [Thread-1 (]: Using postgres connection "model.ecb_sektorid.stg_ecb_rates"
+[0m18:12:32.406265 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.007 seconds
+[0m18:12:32.406574 [debug] [Thread-1 (]: On model.ecb_sektorid.stg_ecb_rates: COMMIT
+[0m18:12:32.407085 [debug] [Thread-2 (]: On model.ecb_sektorid.stg_index_prices: COMMIT
+[0m18:12:32.407311 [debug] [Thread-2 (]: Using postgres connection "model.ecb_sektorid.stg_index_prices"
+[0m18:12:32.407706 [debug] [Thread-2 (]: On model.ecb_sektorid.stg_index_prices: COMMIT
+[0m18:12:32.407566 [debug] [Thread-1 (]: SQL status: COMMIT in 0.000 seconds
+[0m18:12:32.410876 [debug] [Thread-1 (]: Applying DROP to: "praktikum"."staging"."stg_ecb_rates__dbt_backup"
+[0m18:12:32.411047 [debug] [Thread-2 (]: SQL status: COMMIT in 0.003 seconds
+[0m18:12:32.413795 [debug] [Thread-2 (]: Applying DROP to: "praktikum"."staging"."stg_index_prices__dbt_backup"
+[0m18:12:32.412945 [debug] [Thread-1 (]: Using postgres connection "model.ecb_sektorid.stg_ecb_rates"
+[0m18:12:32.414230 [debug] [Thread-1 (]: On model.ecb_sektorid.stg_ecb_rates: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.stg_ecb_rates"} */
+drop view if exists "praktikum"."staging"."stg_ecb_rates__dbt_backup" cascade
+[0m18:12:32.414068 [debug] [Thread-2 (]: Using postgres connection "model.ecb_sektorid.stg_index_prices"
+[0m18:12:32.414402 [debug] [Thread-2 (]: On model.ecb_sektorid.stg_index_prices: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.stg_index_prices"} */
+drop view if exists "praktikum"."staging"."stg_index_prices__dbt_backup" cascade
+[0m18:12:32.414549 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.000 seconds
+[0m18:12:32.415548 [debug] [Thread-1 (]: On model.ecb_sektorid.stg_ecb_rates: Close
+[0m18:12:32.415712 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m18:12:32.416245 [debug] [Thread-2 (]: On model.ecb_sektorid.stg_index_prices: Close
+[0m18:12:32.416997 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2359fbcd-02da-4ef4-a001-339c5aac6c8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb2314560>]}
+[0m18:12:32.417472 [info ] [Thread-2 (]: 2 of 7 OK created sql view model staging.stg_index_prices ...................... [[32mCREATE VIEW[0m in 0.05s]
+[0m18:12:32.417228 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2359fbcd-02da-4ef4-a001-339c5aac6c8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb38e01a0>]}
+[0m18:12:32.417758 [debug] [Thread-2 (]: Finished running node model.ecb_sektorid.stg_index_prices
+[0m18:12:32.418033 [info ] [Thread-1 (]: 1 of 7 OK created sql view model staging.stg_ecb_rates ......................... [[32mCREATE VIEW[0m in 0.05s]
+[0m18:12:32.418430 [debug] [Thread-1 (]: Finished running node model.ecb_sektorid.stg_ecb_rates
+[0m18:12:32.418588 [debug] [Thread-2 (]: Began running node model.ecb_sektorid.int_sector_returns
+[0m18:12:32.418826 [info ] [Thread-2 (]: 3 of 7 START sql view model intermediate.int_sector_returns .................... [RUN]
+[0m18:12:32.419086 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.ecb_sektorid.stg_index_prices, now model.ecb_sektorid.int_sector_returns)
+[0m18:12:32.419246 [debug] [Thread-1 (]: Began running node model.ecb_sektorid.int_aligned_ecb_rates
+[0m18:12:32.419577 [info ] [Thread-1 (]: 4 of 7 START sql view model intermediate.int_aligned_ecb_rates ................. [RUN]
+[0m18:12:32.419375 [debug] [Thread-2 (]: Began compiling node model.ecb_sektorid.int_sector_returns
+[0m18:12:32.419788 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.ecb_sektorid.stg_ecb_rates, now model.ecb_sektorid.int_aligned_ecb_rates)
+[0m18:12:32.421189 [debug] [Thread-1 (]: Began compiling node model.ecb_sektorid.int_aligned_ecb_rates
+[0m18:12:32.421009 [debug] [Thread-2 (]: Writing injected SQL for node "model.ecb_sektorid.int_sector_returns"
+[0m18:12:32.422347 [debug] [Thread-1 (]: Writing injected SQL for node "model.ecb_sektorid.int_aligned_ecb_rates"
+[0m18:12:32.423277 [debug] [Thread-2 (]: Began executing node model.ecb_sektorid.int_sector_returns
+[0m18:12:32.423440 [debug] [Thread-1 (]: Began executing node model.ecb_sektorid.int_aligned_ecb_rates
+[0m18:12:32.424590 [debug] [Thread-2 (]: Writing runtime sql for node "model.ecb_sektorid.int_sector_returns"
+[0m18:12:32.425758 [debug] [Thread-1 (]: Writing runtime sql for node "model.ecb_sektorid.int_aligned_ecb_rates"
+[0m18:12:32.426598 [debug] [Thread-1 (]: Using postgres connection "model.ecb_sektorid.int_aligned_ecb_rates"
+[0m18:12:32.426781 [debug] [Thread-2 (]: Using postgres connection "model.ecb_sektorid.int_sector_returns"
+[0m18:12:32.426951 [debug] [Thread-1 (]: On model.ecb_sektorid.int_aligned_ecb_rates: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.int_aligned_ecb_rates"} */
+
+  create view "praktikum"."intermediate"."int_aligned_ecb_rates__dbt_tmp"
+    
+    
+  as (
+    -- int_aligned_ecb_rates
+--
+-- Forward-fills the ECB deposit facility rate to every trading day.
+-- ECB decisions happen a few times per year; markets trade every weekday.
+-- For each trading day, we take the most recent ECB rate that was in effect
+-- on or before that date (last-observation-carried-forward / LOCF).
+--
+-- Example:
+--   ECB sets rate on 2023-09-14 → that rate applies to all trading days
+--   from 2023-09-14 until the next ECB decision date.
+
+with rates as (
+    select * from "praktikum"."staging"."stg_ecb_rates"
+),
+
+trading_days as (
+    select distinct price_date
+    from "praktikum"."staging"."stg_index_prices"
+),
+
+-- For each trading day, find the most recent ECB decision date on or before it
+latest_rate_date_per_day as (
+    select
+        t.price_date,
+        max(r.date_ref) as effective_rate_date
+    from trading_days t
+    inner join rates r on r.date_ref <= t.price_date
+    group by t.price_date
+)
+
+select
+    l.price_date,
+    l.effective_rate_date,
+    r.rate_pct as ecb_rate_pct
+from latest_rate_date_per_day l
+inner join rates r on r.date_ref = l.effective_rate_date
+  );
+[0m18:12:32.427295 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:32.427129 [debug] [Thread-2 (]: On model.ecb_sektorid.int_sector_returns: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.int_sector_returns"} */
+
+  create view "praktikum"."intermediate"."int_sector_returns__dbt_tmp"
+    
+    
+  as (
+    -- int_sector_returns
+--
+-- Calculates the daily percentage return for each sector ETF.
+-- Return = (close_price - prev_close_price) / prev_close_price * 100
+--
+-- Uses LAG() partitioned by ticker so each sector's return series is independent.
+-- The first trading day per ticker has no return (prev_close is null) and is excluded.
+
+with prices as (
+    select * from "praktikum"."staging"."stg_index_prices"
+),
+
+with_prev_close as (
+    select
+        ticker,
+        price_date,
+        close_price,
+        lag(close_price) over (
+            partition by ticker
+            order by price_date
+        ) as prev_close_price
+    from prices
+)
+
+select
+    ticker,
+    price_date,
+    close_price,
+    prev_close_price,
+    round(
+        (close_price - prev_close_price) / prev_close_price * 100,
+        6
+    ) as daily_return_pct
+from with_prev_close
+where prev_close_price is not null
+  and prev_close_price > 0
+  );
+[0m18:12:32.427544 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:12:32.432394 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.005 seconds
+[0m18:12:32.433558 [debug] [Thread-1 (]: Using postgres connection "model.ecb_sektorid.int_aligned_ecb_rates"
+[0m18:12:32.433688 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.006 seconds
+[0m18:12:32.433840 [debug] [Thread-1 (]: On model.ecb_sektorid.int_aligned_ecb_rates: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.int_aligned_ecb_rates"} */
+alter table "praktikum"."intermediate"."int_aligned_ecb_rates__dbt_tmp" rename to "int_aligned_ecb_rates"
+[0m18:12:32.435030 [debug] [Thread-2 (]: Using postgres connection "model.ecb_sektorid.int_sector_returns"
+[0m18:12:32.435252 [debug] [Thread-2 (]: On model.ecb_sektorid.int_sector_returns: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.int_sector_returns"} */
+alter table "praktikum"."intermediate"."int_sector_returns__dbt_tmp" rename to "int_sector_returns"
+[0m18:12:32.435414 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m18:12:32.435971 [debug] [Thread-1 (]: On model.ecb_sektorid.int_aligned_ecb_rates: COMMIT
+[0m18:12:32.436263 [debug] [Thread-1 (]: Using postgres connection "model.ecb_sektorid.int_aligned_ecb_rates"
+[0m18:12:32.436104 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m18:12:32.436846 [debug] [Thread-2 (]: On model.ecb_sektorid.int_sector_returns: COMMIT
+[0m18:12:32.436416 [debug] [Thread-1 (]: On model.ecb_sektorid.int_aligned_ecb_rates: COMMIT
+[0m18:12:32.437017 [debug] [Thread-2 (]: Using postgres connection "model.ecb_sektorid.int_sector_returns"
+[0m18:12:32.437209 [debug] [Thread-2 (]: On model.ecb_sektorid.int_sector_returns: COMMIT
+[0m18:12:32.437390 [debug] [Thread-1 (]: SQL status: COMMIT in 0.000 seconds
+[0m18:12:32.438310 [debug] [Thread-1 (]: Applying DROP to: "praktikum"."intermediate"."int_aligned_ecb_rates__dbt_backup"
+[0m18:12:32.438454 [debug] [Thread-2 (]: SQL status: COMMIT in 0.001 seconds
+[0m18:12:32.438658 [debug] [Thread-1 (]: Using postgres connection "model.ecb_sektorid.int_aligned_ecb_rates"
+[0m18:12:32.440296 [debug] [Thread-1 (]: On model.ecb_sektorid.int_aligned_ecb_rates: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.int_aligned_ecb_rates"} */
+drop view if exists "praktikum"."intermediate"."int_aligned_ecb_rates__dbt_backup" cascade
+[0m18:12:32.439462 [debug] [Thread-2 (]: Applying DROP to: "praktikum"."intermediate"."int_sector_returns__dbt_backup"
+[0m18:12:32.440549 [debug] [Thread-2 (]: Using postgres connection "model.ecb_sektorid.int_sector_returns"
+[0m18:12:32.440707 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.000 seconds
+[0m18:12:32.441339 [debug] [Thread-1 (]: On model.ecb_sektorid.int_aligned_ecb_rates: Close
+[0m18:12:32.440839 [debug] [Thread-2 (]: On model.ecb_sektorid.int_sector_returns: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.int_sector_returns"} */
+drop view if exists "praktikum"."intermediate"."int_sector_returns__dbt_backup" cascade
+[0m18:12:32.441603 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2359fbcd-02da-4ef4-a001-339c5aac6c8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb0f38e00>]}
+[0m18:12:32.442029 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.000 seconds
+[0m18:12:32.442556 [debug] [Thread-2 (]: On model.ecb_sektorid.int_sector_returns: Close
+[0m18:12:32.441893 [info ] [Thread-1 (]: 4 of 7 OK created sql view model intermediate.int_aligned_ecb_rates ............ [[32mCREATE VIEW[0m in 0.02s]
+[0m18:12:32.443012 [debug] [Thread-1 (]: Finished running node model.ecb_sektorid.int_aligned_ecb_rates
+[0m18:12:32.442783 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2359fbcd-02da-4ef4-a001-339c5aac6c8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb0f00650>]}
+[0m18:12:32.443397 [info ] [Thread-2 (]: 3 of 7 OK created sql view model intermediate.int_sector_returns ............... [[32mCREATE VIEW[0m in 0.02s]
+[0m18:12:32.443776 [debug] [Thread-2 (]: Finished running node model.ecb_sektorid.int_sector_returns
+[0m18:12:32.443589 [debug] [Thread-1 (]: Began running node model.ecb_sektorid.mart_prices_and_rates
+[0m18:12:32.444015 [info ] [Thread-1 (]: 5 of 7 START sql table model marts.mart_prices_and_rates ....................... [RUN]
+[0m18:12:32.444269 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.ecb_sektorid.int_aligned_ecb_rates, now model.ecb_sektorid.mart_prices_and_rates)
+[0m18:12:32.444464 [debug] [Thread-2 (]: Began running node model.ecb_sektorid.mart_post_event_returns
+[0m18:12:32.444599 [debug] [Thread-1 (]: Began compiling node model.ecb_sektorid.mart_prices_and_rates
+[0m18:12:32.444824 [info ] [Thread-2 (]: 6 of 7 START sql table model marts.mart_post_event_returns ..................... [RUN]
+[0m18:12:32.446473 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.ecb_sektorid.int_sector_returns, now model.ecb_sektorid.mart_post_event_returns)
+[0m18:12:32.446274 [debug] [Thread-1 (]: Writing injected SQL for node "model.ecb_sektorid.mart_prices_and_rates"
+[0m18:12:32.446622 [debug] [Thread-2 (]: Began compiling node model.ecb_sektorid.mart_post_event_returns
+[0m18:12:32.447953 [debug] [Thread-2 (]: Writing injected SQL for node "model.ecb_sektorid.mart_post_event_returns"
+[0m18:12:32.448653 [debug] [Thread-1 (]: Began executing node model.ecb_sektorid.mart_prices_and_rates
+[0m18:12:32.448839 [debug] [Thread-2 (]: Began executing node model.ecb_sektorid.mart_post_event_returns
+[0m18:12:32.458327 [debug] [Thread-2 (]: Writing runtime sql for node "model.ecb_sektorid.mart_post_event_returns"
+[0m18:12:32.457140 [debug] [Thread-1 (]: Writing runtime sql for node "model.ecb_sektorid.mart_prices_and_rates"
+[0m18:12:32.459222 [debug] [Thread-2 (]: Using postgres connection "model.ecb_sektorid.mart_post_event_returns"
+[0m18:12:32.459415 [debug] [Thread-1 (]: Using postgres connection "model.ecb_sektorid.mart_prices_and_rates"
+[0m18:12:32.459816 [debug] [Thread-1 (]: On model.ecb_sektorid.mart_prices_and_rates: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.mart_prices_and_rates"} */
+
+  
+    
+
+  create  table "praktikum"."marts"."mart_prices_and_rates__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- mart_prices_and_rates
+--
+-- Metric 1 (architecture doc): Descriptive chart showing sector index prices
+-- and the ECB rate level over the observed period.
+--
+-- Joins daily closing prices with the forward-filled ECB rate so that
+-- every row has both the sector price and the rate that was in effect that day.
+-- This is the primary input for the time-series visualisation in Superset.
+
+with prices as (
+    select * from "praktikum"."staging"."stg_index_prices"
+),
+
+rates as (
+    select * from "praktikum"."intermediate"."int_aligned_ecb_rates"
+),
+
+sectors as (
+    select ticker, sector_name
+    from "praktikum"."marts"."dim_sectors"
+    where valid_to = '9999-01-01'
+)
+
+select
+    p.price_date,
+    p.ticker,
+    s.sector_name,
+    p.close_price,
+    r.ecb_rate_pct,
+    r.effective_rate_date
+from prices p
+left join rates   r on r.price_date = p.price_date
+left join sectors s on s.ticker     = p.ticker
+order by p.price_date, p.ticker
+  );
+  
+[0m18:12:32.459583 [debug] [Thread-2 (]: On model.ecb_sektorid.mart_post_event_returns: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.mart_post_event_returns"} */
+
+  
+    
+
+  create  table "praktikum"."marts"."mart_post_event_returns__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- mart_post_event_returns
+--
+-- Metric 2 (architecture doc): Average sector returns in the 30 trading days
+-- following each ECB rate change decision.
+--
+-- For every ECB rate change event, we find all trading days in the next 30
+-- calendar days and sum up each sector's daily returns over that window.
+-- The result is one row per (event_date, ticker).
+--
+-- rate_change_bp: change in basis points (100 bp = 1 percentage point)
+--   positive = rate hike, negative = rate cut
+
+with rate_changes as (
+    select
+        date_ref                                                          as event_date,
+        rate_pct,
+        lag(rate_pct) over (order by date_ref)                            as prev_rate_pct,
+        round(
+            (rate_pct - lag(rate_pct) over (order by date_ref)) * 100,
+            2
+        )                                                                 as rate_change_bp
+    from "praktikum"."staging"."stg_ecb_rates"
+),
+
+-- Keep only actual decision dates where the rate changed
+events as (
+    select *
+    from rate_changes
+    where rate_change_bp is not null
+      and rate_change_bp <> 0
+),
+
+returns as (
+    select * from "praktikum"."intermediate"."int_sector_returns"
+),
+
+sectors as (
+    select ticker, sector_name
+    from "praktikum"."marts"."dim_sectors"
+    where valid_to = '9999-01-01'
+),
+
+-- Collect every (event, ticker, trading_day) combination within the 30-day window
+post_event_daily as (
+    select
+        e.event_date,
+        e.rate_pct,
+        e.prev_rate_pct,
+        e.rate_change_bp,
+        r.ticker,
+        r.price_date,
+        r.daily_return_pct
+    from events e
+    inner join returns r
+        on  r.price_date >  e.event_date
+        and r.price_date <= e.event_date + 30   -- 30 calendar days after event
+),
+
+-- Aggregate to one row per (event, ticker)
+aggregated as (
+    select
+        event_date,
+        rate_pct,
+        prev_rate_pct,
+        rate_change_bp,
+        ticker,
+        count(*)                        as trading_days_in_window,
+        round(sum(daily_return_pct), 4) as cumulative_return_30d_pct
+    from post_event_daily
+    group by event_date, rate_pct, prev_rate_pct, rate_change_bp, ticker
+)
+
+select
+    a.event_date,
+    a.rate_pct,
+    a.prev_rate_pct,
+    a.rate_change_bp,
+    a.ticker,
+    s.sector_name,
+    a.trading_days_in_window,
+    a.cumulative_return_30d_pct
+from aggregated a
+left join sectors s on s.ticker = a.ticker
+order by a.event_date, a.ticker
+  );
+  
+[0m18:12:32.460320 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:12:32.460005 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:32.498070 [debug] [Thread-1 (]: SQL status: SELECT 24206 in 0.038 seconds
+[0m18:12:32.501066 [debug] [Thread-1 (]: Using postgres connection "model.ecb_sektorid.mart_prices_and_rates"
+[0m18:12:32.501287 [debug] [Thread-1 (]: On model.ecb_sektorid.mart_prices_and_rates: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.mart_prices_and_rates"} */
+alter table "praktikum"."marts"."mart_prices_and_rates__dbt_tmp" rename to "mart_prices_and_rates"
+[0m18:12:32.501626 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m18:12:32.502266 [debug] [Thread-1 (]: On model.ecb_sektorid.mart_prices_and_rates: COMMIT
+[0m18:12:32.502456 [debug] [Thread-1 (]: Using postgres connection "model.ecb_sektorid.mart_prices_and_rates"
+[0m18:12:32.502635 [debug] [Thread-1 (]: On model.ecb_sektorid.mart_prices_and_rates: COMMIT
+[0m18:12:32.504298 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m18:12:32.505292 [debug] [Thread-1 (]: Applying DROP to: "praktikum"."marts"."mart_prices_and_rates__dbt_backup"
+[0m18:12:32.506466 [debug] [Thread-1 (]: Using postgres connection "model.ecb_sektorid.mart_prices_and_rates"
+[0m18:12:32.506648 [debug] [Thread-1 (]: On model.ecb_sektorid.mart_prices_and_rates: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.mart_prices_and_rates"} */
+drop table if exists "praktikum"."marts"."mart_prices_and_rates__dbt_backup" cascade
+[0m18:12:32.506887 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.000 seconds
+[0m18:12:32.507457 [debug] [Thread-1 (]: On model.ecb_sektorid.mart_prices_and_rates: Close
+[0m18:12:32.507745 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2359fbcd-02da-4ef4-a001-339c5aac6c8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb6305520>]}
+[0m18:12:32.508043 [info ] [Thread-1 (]: 5 of 7 OK created sql table model marts.mart_prices_and_rates .................. [[32mSELECT 24206[0m in 0.06s]
+[0m18:12:32.508308 [debug] [Thread-1 (]: Finished running node model.ecb_sektorid.mart_prices_and_rates
+[0m18:12:32.941898 [debug] [Thread-2 (]: SQL status: SELECT 342 in 0.482 seconds
+[0m18:12:32.943577 [debug] [Thread-2 (]: Using postgres connection "model.ecb_sektorid.mart_post_event_returns"
+[0m18:12:32.943811 [debug] [Thread-2 (]: On model.ecb_sektorid.mart_post_event_returns: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.mart_post_event_returns"} */
+alter table "praktikum"."marts"."mart_post_event_returns__dbt_tmp" rename to "mart_post_event_returns"
+[0m18:12:32.944190 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m18:12:32.944762 [debug] [Thread-2 (]: On model.ecb_sektorid.mart_post_event_returns: COMMIT
+[0m18:12:32.944980 [debug] [Thread-2 (]: Using postgres connection "model.ecb_sektorid.mart_post_event_returns"
+[0m18:12:32.945142 [debug] [Thread-2 (]: On model.ecb_sektorid.mart_post_event_returns: COMMIT
+[0m18:12:32.946396 [debug] [Thread-2 (]: SQL status: COMMIT in 0.001 seconds
+[0m18:12:32.947301 [debug] [Thread-2 (]: Applying DROP to: "praktikum"."marts"."mart_post_event_returns__dbt_backup"
+[0m18:12:32.947549 [debug] [Thread-2 (]: Using postgres connection "model.ecb_sektorid.mart_post_event_returns"
+[0m18:12:32.947770 [debug] [Thread-2 (]: On model.ecb_sektorid.mart_post_event_returns: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.mart_post_event_returns"} */
+drop table if exists "praktikum"."marts"."mart_post_event_returns__dbt_backup" cascade
+[0m18:12:32.948037 [debug] [Thread-2 (]: SQL status: DROP TABLE in 0.000 seconds
+[0m18:12:32.948657 [debug] [Thread-2 (]: On model.ecb_sektorid.mart_post_event_returns: Close
+[0m18:12:32.948981 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2359fbcd-02da-4ef4-a001-339c5aac6c8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb24cee10>]}
+[0m18:12:32.949295 [info ] [Thread-2 (]: 6 of 7 OK created sql table model marts.mart_post_event_returns ................ [[32mSELECT 342[0m in 0.50s]
+[0m18:12:32.949607 [debug] [Thread-2 (]: Finished running node model.ecb_sektorid.mart_post_event_returns
+[0m18:12:32.950077 [debug] [Thread-1 (]: Began running node model.ecb_sektorid.mart_sector_betas
+[0m18:12:32.950338 [info ] [Thread-1 (]: 7 of 7 START sql table model marts.mart_sector_betas ........................... [RUN]
+[0m18:12:32.950563 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.ecb_sektorid.mart_prices_and_rates, now model.ecb_sektorid.mart_sector_betas)
+[0m18:12:32.950739 [debug] [Thread-1 (]: Began compiling node model.ecb_sektorid.mart_sector_betas
+[0m18:12:32.952009 [debug] [Thread-1 (]: Writing injected SQL for node "model.ecb_sektorid.mart_sector_betas"
+[0m18:12:32.952515 [debug] [Thread-1 (]: Began executing node model.ecb_sektorid.mart_sector_betas
+[0m18:12:32.954581 [debug] [Thread-1 (]: Writing runtime sql for node "model.ecb_sektorid.mart_sector_betas"
+[0m18:12:32.955145 [debug] [Thread-1 (]: Using postgres connection "model.ecb_sektorid.mart_sector_betas"
+[0m18:12:32.955350 [debug] [Thread-1 (]: On model.ecb_sektorid.mart_sector_betas: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.mart_sector_betas"} */
+
+  
+    
+
+  create  table "praktikum"."marts"."mart_sector_betas__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- mart_sector_betas
+--
+-- Metric 3 (architecture doc): Interest rate sensitivity beta per sector.
+-- Answers: "How much does a sector's 30-day return change for every 1 bp rate move?"
+--
+-- Method: OLS linear regression computed directly in SQL.
+--   X = rate_change_bp  (the ECB decision size, in basis points)
+--   Y = cumulative_return_30d_pct  (sector return in the 30 days after the decision)
+--   β = Cov(X, Y) / Var(X)  = Σ[(xi - x̄)(yi - ȳ)] / Σ[(xi - x̄)²]
+--
+-- A positive beta means the sector tends to rise when rates are hiked.
+-- A negative beta means the sector tends to fall when rates are hiked (rate-sensitive).
+-- beta = null when there is too little data to compute (fewer than 2 events).
+
+with source as (
+    select
+        ticker,
+        sector_name,
+        rate_change_bp::numeric          as x,
+        cumulative_return_30d_pct::numeric as y
+    from "praktikum"."marts"."mart_post_event_returns"
+    where rate_change_bp         is not null
+      and cumulative_return_30d_pct is not null
+),
+
+-- Per-sector means (needed to compute deviations)
+means as (
+    select
+        ticker,
+        sector_name,
+        count(*)  as n,
+        avg(x)    as mean_x,
+        avg(y)    as mean_y
+    from source
+    group by ticker, sector_name
+),
+
+-- Deviations from the mean per observation
+deviations as (
+    select
+        s.ticker,
+        s.sector_name,
+        (s.x - m.mean_x) * (s.y - m.mean_y) as cross_dev,
+        power(s.x - m.mean_x, 2)             as sq_dev_x
+    from source s
+    inner join means m on m.ticker = s.ticker
+)
+
+select
+    d.ticker,
+    d.sector_name,
+    m.n                                          as event_count,
+    round(m.mean_y, 4)                           as avg_30d_return_pct,
+    round(
+        case
+            when m.n < 2              then null   -- not enough data
+            when sum(d.sq_dev_x) = 0  then null   -- no variance in X (all events same size)
+            else sum(d.cross_dev) / sum(d.sq_dev_x)
+        end,
+        6
+    )                                            as beta
+from deviations d
+inner join means m on m.ticker = d.ticker
+group by d.ticker, d.sector_name, m.n, m.mean_y
+order by beta desc nulls last
+  );
+  
+[0m18:12:32.955540 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:32.959970 [debug] [Thread-1 (]: SQL status: SELECT 19 in 0.004 seconds
+[0m18:12:32.961170 [debug] [Thread-1 (]: Using postgres connection "model.ecb_sektorid.mart_sector_betas"
+[0m18:12:32.961337 [debug] [Thread-1 (]: On model.ecb_sektorid.mart_sector_betas: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.mart_sector_betas"} */
+alter table "praktikum"."marts"."mart_sector_betas__dbt_tmp" rename to "mart_sector_betas"
+[0m18:12:32.961577 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m18:12:32.962075 [debug] [Thread-1 (]: On model.ecb_sektorid.mart_sector_betas: COMMIT
+[0m18:12:32.962228 [debug] [Thread-1 (]: Using postgres connection "model.ecb_sektorid.mart_sector_betas"
+[0m18:12:32.962365 [debug] [Thread-1 (]: On model.ecb_sektorid.mart_sector_betas: COMMIT
+[0m18:12:32.962839 [debug] [Thread-1 (]: SQL status: COMMIT in 0.000 seconds
+[0m18:12:32.963648 [debug] [Thread-1 (]: Applying DROP to: "praktikum"."marts"."mart_sector_betas__dbt_backup"
+[0m18:12:32.963965 [debug] [Thread-1 (]: Using postgres connection "model.ecb_sektorid.mart_sector_betas"
+[0m18:12:32.964227 [debug] [Thread-1 (]: On model.ecb_sektorid.mart_sector_betas: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "model.ecb_sektorid.mart_sector_betas"} */
+drop table if exists "praktikum"."marts"."mart_sector_betas__dbt_backup" cascade
+[0m18:12:32.964491 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.000 seconds
+[0m18:12:32.965090 [debug] [Thread-1 (]: On model.ecb_sektorid.mart_sector_betas: Close
+[0m18:12:32.965364 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2359fbcd-02da-4ef4-a001-339c5aac6c8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb0f69ac0>]}
+[0m18:12:32.965647 [info ] [Thread-1 (]: 7 of 7 OK created sql table model marts.mart_sector_betas ...................... [[32mSELECT 19[0m in 0.01s]
+[0m18:12:32.965900 [debug] [Thread-1 (]: Finished running node model.ecb_sektorid.mart_sector_betas
+[0m18:12:32.966545 [debug] [MainThread]: On master: COMMIT
+[0m18:12:32.966745 [debug] [MainThread]: Using postgres connection "master"
+[0m18:12:32.966892 [debug] [MainThread]: On master: COMMIT
+[0m18:12:32.967028 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:12:32.969887 [debug] [MainThread]: SQL status: COMMIT in 0.003 seconds
+[0m18:12:32.970063 [debug] [MainThread]: On master: Close
+[0m18:12:32.970256 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:12:32.970399 [debug] [MainThread]: Connection 'list_praktikum' was properly closed.
+[0m18:12:32.970529 [debug] [MainThread]: Connection 'model.ecb_sektorid.mart_post_event_returns' was properly closed.
+[0m18:12:32.970654 [debug] [MainThread]: Connection 'model.ecb_sektorid.mart_sector_betas' was properly closed.
+[0m18:12:32.970838 [info ] [MainThread]: 
+[0m18:12:32.971012 [info ] [MainThread]: Finished running 3 table models, 4 view models in 0 hours 0 minutes and 0.68 seconds (0.68s).
+[0m18:12:32.971580 [debug] [MainThread]: Command end result
+[0m18:12:32.986944 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m18:12:32.988217 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m18:12:32.991741 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m18:12:32.991892 [info ] [MainThread]: 
+[0m18:12:32.992067 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:12:32.992216 [info ] [MainThread]: 
+[0m18:12:32.992374 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
+[0m18:12:32.992793 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.001774, "process_in_blocks": "0", "process_kernel_time": 0.06536, "process_mem_max_rss": "140580", "process_out_blocks": "2514", "process_user_time": 1.022647}
+[0m18:12:32.992989 [debug] [MainThread]: Command `dbt run` succeeded at 18:12:32.992958 after 1.00 seconds
+[0m18:12:32.993159 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb3b3af00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb4822e40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb42d2180>]}
+[0m18:12:32.993322 [debug] [MainThread]: Flushing usage events
+[0m18:12:33.778781 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:12:34.773035 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffba4d3c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffba0ff8f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb9da6060>]}
+
+
+============================== 18:12:34.774561 | a04b9942-3c9c-4687-a492-023bd47cd8ec ==============================
+[0m18:12:34.774561 [info ] [MainThread]: Running with dbt=1.12.0-b1
+[0m18:12:34.774900 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '.', 'no_print': 'None', 'version_check': 'True', 'write_json': 'True', 'partial_parse': 'True', 'log_format': 'default', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'invocation_command': 'dbt test --profiles-dir .', 'cache_selected_only': 'False', 'debug': 'False', 'warn_error': 'None', 'static_parser': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'target_path': 'None', 'quiet': 'False', 'log_cache_events': 'False', 'printer_width': '80', 'introspect': 'True', 'use_colors': 'True'}
+[0m18:12:34.841363 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a04b9942-3c9c-4687-a492-023bd47cd8ec', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffba0c80b0>]}
+[0m18:12:34.865582 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a04b9942-3c9c-4687-a492-023bd47cd8ec', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb9f3da00>]}
+[0m18:12:34.866089 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m18:12:34.894545 [debug] [MainThread]: checksum: 62a73b174547631363f3141a0c8751bab0a1683fed691bc8abe890bf0173e884, vars: {}, profile: ecb_sektorid, target: dev, version: 1.12.0b1
+[0m18:12:34.963571 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:12:34.963837 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m18:12:34.964033 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:12:34.988326 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a04b9942-3c9c-4687-a492-023bd47cd8ec', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb82faba0>]}
+[0m18:12:35.035470 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m18:12:35.036981 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m18:12:35.045662 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a04b9942-3c9c-4687-a492-023bd47cd8ec', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb7dd86b0>]}
+[0m18:12:35.045949 [info ] [MainThread]: Found 7 models, 1 seed, 22 data tests, 2 sources, 476 macros
+[0m18:12:35.046200 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a04b9942-3c9c-4687-a492-023bd47cd8ec', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb7d97740>]}
+[0m18:12:35.047340 [info ] [MainThread]: 
+[0m18:12:35.047560 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m18:12:35.047722 [info ] [MainThread]: 
+[0m18:12:35.048033 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m18:12:35.050056 [debug] [ThreadPool]: Acquiring new postgres connection 'list_praktikum_staging'
+[0m18:12:35.055059 [debug] [ThreadPool]: Acquiring new postgres connection 'list_praktikum_intermediate'
+[0m18:12:35.088735 [debug] [ThreadPool]: Using postgres connection "list_praktikum_staging"
+[0m18:12:35.088972 [debug] [ThreadPool]: Using postgres connection "list_praktikum_intermediate"
+[0m18:12:35.089132 [debug] [ThreadPool]: On list_praktikum_staging: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "connection_name": "list_praktikum_staging"} */
+select
+      'praktikum' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'staging'
+    union all
+    select
+      'praktikum' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'staging'
+    union all
+    select
+      'praktikum' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'staging'
+  
+[0m18:12:35.089339 [debug] [ThreadPool]: On list_praktikum_intermediate: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "connection_name": "list_praktikum_intermediate"} */
+select
+      'praktikum' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'intermediate'
+    union all
+    select
+      'praktikum' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'intermediate'
+    union all
+    select
+      'praktikum' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'intermediate'
+  
+[0m18:12:35.089515 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:12:35.089684 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:12:35.095399 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.006 seconds
+[0m18:12:35.095589 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.006 seconds
+[0m18:12:35.096199 [debug] [ThreadPool]: On list_praktikum_staging: ROLLBACK
+[0m18:12:35.096725 [debug] [ThreadPool]: On list_praktikum_intermediate: ROLLBACK
+[0m18:12:35.096960 [debug] [ThreadPool]: On list_praktikum_staging: Close
+[0m18:12:35.097186 [debug] [ThreadPool]: On list_praktikum_intermediate: Close
+[0m18:12:35.097424 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_praktikum_staging, now list_praktikum_marts)
+[0m18:12:35.098839 [debug] [ThreadPool]: Using postgres connection "list_praktikum_marts"
+[0m18:12:35.099019 [debug] [ThreadPool]: On list_praktikum_marts: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "connection_name": "list_praktikum_marts"} */
+select
+      'praktikum' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'marts'
+    union all
+    select
+      'praktikum' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'marts'
+    union all
+    select
+      'praktikum' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'marts'
+  
+[0m18:12:35.099240 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:12:35.102742 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.004 seconds
+[0m18:12:35.103289 [debug] [ThreadPool]: On list_praktikum_marts: ROLLBACK
+[0m18:12:35.103487 [debug] [ThreadPool]: On list_praktikum_marts: Close
+[0m18:12:35.105721 [debug] [MainThread]: Using postgres connection "master"
+[0m18:12:35.105934 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m18:12:35.106136 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:12:35.110196 [debug] [MainThread]: SQL status: SELECT 5 in 0.004 seconds
+[0m18:12:35.111197 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a04b9942-3c9c-4687-a492-023bd47cd8ec', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb82faf00>]}
+[0m18:12:35.111439 [debug] [MainThread]: On master: ROLLBACK
+[0m18:12:35.111705 [debug] [MainThread]: On master: COMMIT
+[0m18:12:35.111887 [debug] [MainThread]: Using postgres connection "master"
+[0m18:12:35.112073 [debug] [MainThread]: On master: COMMIT
+[0m18:12:35.112374 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m18:12:35.112572 [debug] [MainThread]: On master: Close
+[0m18:12:35.114027 [debug] [Thread-1 (]: Began running node test.ecb_sektorid.not_null_int_aligned_ecb_rates_ecb_rate_pct.b6900bfcb2
+[0m18:12:35.114233 [debug] [Thread-2 (]: Began running node test.ecb_sektorid.not_null_int_aligned_ecb_rates_price_date.fc75d60675
+[0m18:12:35.114422 [info ] [Thread-1 (]: 1 of 22 START test not_null_int_aligned_ecb_rates_ecb_rate_pct ................. [RUN]
+[0m18:12:35.114664 [info ] [Thread-2 (]: 2 of 22 START test not_null_int_aligned_ecb_rates_price_date ................... [RUN]
+[0m18:12:35.114965 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_praktikum_marts, now test.ecb_sektorid.not_null_int_aligned_ecb_rates_ecb_rate_pct.b6900bfcb2)
+[0m18:12:35.115262 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_praktikum_intermediate, now test.ecb_sektorid.not_null_int_aligned_ecb_rates_price_date.fc75d60675)
+[0m18:12:35.115514 [debug] [Thread-1 (]: Began compiling node test.ecb_sektorid.not_null_int_aligned_ecb_rates_ecb_rate_pct.b6900bfcb2
+[0m18:12:35.115746 [debug] [Thread-2 (]: Began compiling node test.ecb_sektorid.not_null_int_aligned_ecb_rates_price_date.fc75d60675
+[0m18:12:35.122463 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_int_aligned_ecb_rates_ecb_rate_pct.b6900bfcb2"
+[0m18:12:35.124041 [debug] [Thread-2 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_int_aligned_ecb_rates_price_date.fc75d60675"
+[0m18:12:35.125008 [debug] [Thread-1 (]: Began executing node test.ecb_sektorid.not_null_int_aligned_ecb_rates_ecb_rate_pct.b6900bfcb2
+[0m18:12:35.125184 [debug] [Thread-2 (]: Began executing node test.ecb_sektorid.not_null_int_aligned_ecb_rates_price_date.fc75d60675
+[0m18:12:35.132538 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_int_aligned_ecb_rates_ecb_rate_pct.b6900bfcb2"
+[0m18:12:35.133484 [debug] [Thread-2 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_int_aligned_ecb_rates_price_date.fc75d60675"
+[0m18:12:35.134348 [debug] [Thread-1 (]: Using postgres connection "test.ecb_sektorid.not_null_int_aligned_ecb_rates_ecb_rate_pct.b6900bfcb2"
+[0m18:12:35.134550 [debug] [Thread-2 (]: Using postgres connection "test.ecb_sektorid.not_null_int_aligned_ecb_rates_price_date.fc75d60675"
+[0m18:12:35.134846 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_int_aligned_ecb_rates_price_date.fc75d60675: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_int_aligned_ecb_rates_price_date.fc75d60675"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select price_date
+from "praktikum"."intermediate"."int_aligned_ecb_rates"
+where price_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.134692 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_int_aligned_ecb_rates_ecb_rate_pct.b6900bfcb2: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_int_aligned_ecb_rates_ecb_rate_pct.b6900bfcb2"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ecb_rate_pct
+from "praktikum"."intermediate"."int_aligned_ecb_rates"
+where ecb_rate_pct is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.135202 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:35.135031 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:12:35.140598 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.006 seconds
+[0m18:12:35.140779 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.006 seconds
+[0m18:12:35.143447 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_int_aligned_ecb_rates_ecb_rate_pct.b6900bfcb2: ROLLBACK
+[0m18:12:35.142816 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_int_aligned_ecb_rates_price_date.fc75d60675: ROLLBACK
+[0m18:12:35.143684 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_int_aligned_ecb_rates_ecb_rate_pct.b6900bfcb2: Close
+[0m18:12:35.143836 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_int_aligned_ecb_rates_price_date.fc75d60675: Close
+[0m18:12:35.144366 [info ] [Thread-2 (]: 2 of 22 PASS not_null_int_aligned_ecb_rates_price_date ......................... [[32mPASS[0m in 0.03s]
+[0m18:12:35.144125 [info ] [Thread-1 (]: 1 of 22 PASS not_null_int_aligned_ecb_rates_ecb_rate_pct ....................... [[32mPASS[0m in 0.03s]
+[0m18:12:35.144634 [debug] [Thread-2 (]: Finished running node test.ecb_sektorid.not_null_int_aligned_ecb_rates_price_date.fc75d60675
+[0m18:12:35.145134 [debug] [Thread-2 (]: Began running node test.ecb_sektorid.not_null_int_sector_returns_daily_return_pct.3a26e0a427
+[0m18:12:35.144899 [debug] [Thread-1 (]: Finished running node test.ecb_sektorid.not_null_int_aligned_ecb_rates_ecb_rate_pct.b6900bfcb2
+[0m18:12:35.145545 [debug] [Thread-1 (]: Began running node test.ecb_sektorid.not_null_int_sector_returns_price_date.b0ff3f5724
+[0m18:12:35.145349 [info ] [Thread-2 (]: 3 of 22 START test not_null_int_sector_returns_daily_return_pct ................ [RUN]
+[0m18:12:35.145921 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_int_aligned_ecb_rates_price_date.fc75d60675, now test.ecb_sektorid.not_null_int_sector_returns_daily_return_pct.3a26e0a427)
+[0m18:12:35.145725 [info ] [Thread-1 (]: 4 of 22 START test not_null_int_sector_returns_price_date ...................... [RUN]
+[0m18:12:35.146288 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_int_aligned_ecb_rates_ecb_rate_pct.b6900bfcb2, now test.ecb_sektorid.not_null_int_sector_returns_price_date.b0ff3f5724)
+[0m18:12:35.146095 [debug] [Thread-2 (]: Began compiling node test.ecb_sektorid.not_null_int_sector_returns_daily_return_pct.3a26e0a427
+[0m18:12:35.146446 [debug] [Thread-1 (]: Began compiling node test.ecb_sektorid.not_null_int_sector_returns_price_date.b0ff3f5724
+[0m18:12:35.148164 [debug] [Thread-2 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_int_sector_returns_daily_return_pct.3a26e0a427"
+[0m18:12:35.150443 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_int_sector_returns_price_date.b0ff3f5724"
+[0m18:12:35.151100 [debug] [Thread-2 (]: Began executing node test.ecb_sektorid.not_null_int_sector_returns_daily_return_pct.3a26e0a427
+[0m18:12:35.151258 [debug] [Thread-1 (]: Began executing node test.ecb_sektorid.not_null_int_sector_returns_price_date.b0ff3f5724
+[0m18:12:35.152169 [debug] [Thread-2 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_int_sector_returns_daily_return_pct.3a26e0a427"
+[0m18:12:35.153013 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_int_sector_returns_price_date.b0ff3f5724"
+[0m18:12:35.153583 [debug] [Thread-2 (]: Using postgres connection "test.ecb_sektorid.not_null_int_sector_returns_daily_return_pct.3a26e0a427"
+[0m18:12:35.153743 [debug] [Thread-1 (]: Using postgres connection "test.ecb_sektorid.not_null_int_sector_returns_price_date.b0ff3f5724"
+[0m18:12:35.154061 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_int_sector_returns_price_date.b0ff3f5724: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_int_sector_returns_price_date.b0ff3f5724"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select price_date
+from "praktikum"."intermediate"."int_sector_returns"
+where price_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.153899 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_int_sector_returns_daily_return_pct.3a26e0a427: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_int_sector_returns_daily_return_pct.3a26e0a427"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select daily_return_pct
+from "praktikum"."intermediate"."int_sector_returns"
+where daily_return_pct is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.154388 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:12:35.154219 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:35.170021 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.016 seconds
+[0m18:12:35.170860 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_int_sector_returns_price_date.b0ff3f5724: ROLLBACK
+[0m18:12:35.171165 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_int_sector_returns_price_date.b0ff3f5724: Close
+[0m18:12:35.171509 [info ] [Thread-1 (]: 4 of 22 PASS not_null_int_sector_returns_price_date ............................ [[32mPASS[0m in 0.03s]
+[0m18:12:35.171828 [debug] [Thread-1 (]: Finished running node test.ecb_sektorid.not_null_int_sector_returns_price_date.b0ff3f5724
+[0m18:12:35.172056 [debug] [Thread-1 (]: Began running node test.ecb_sektorid.not_null_int_sector_returns_ticker.492ad16724
+[0m18:12:35.172293 [info ] [Thread-1 (]: 5 of 22 START test not_null_int_sector_returns_ticker .......................... [RUN]
+[0m18:12:35.172525 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_int_sector_returns_price_date.b0ff3f5724, now test.ecb_sektorid.not_null_int_sector_returns_ticker.492ad16724)
+[0m18:12:35.172726 [debug] [Thread-1 (]: Began compiling node test.ecb_sektorid.not_null_int_sector_returns_ticker.492ad16724
+[0m18:12:35.174590 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_int_sector_returns_ticker.492ad16724"
+[0m18:12:35.174768 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.020 seconds
+[0m18:12:35.175426 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_int_sector_returns_daily_return_pct.3a26e0a427: ROLLBACK
+[0m18:12:35.175667 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_int_sector_returns_daily_return_pct.3a26e0a427: Close
+[0m18:12:35.175925 [info ] [Thread-2 (]: 3 of 22 PASS not_null_int_sector_returns_daily_return_pct ...................... [[32mPASS[0m in 0.03s]
+[0m18:12:35.176272 [debug] [Thread-2 (]: Finished running node test.ecb_sektorid.not_null_int_sector_returns_daily_return_pct.3a26e0a427
+[0m18:12:35.176433 [debug] [Thread-1 (]: Began executing node test.ecb_sektorid.not_null_int_sector_returns_ticker.492ad16724
+[0m18:12:35.176636 [debug] [Thread-2 (]: Began running node test.ecb_sektorid.not_null_mart_post_event_returns_cumulative_return_30d_pct.4dec90b74b
+[0m18:12:35.177635 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_int_sector_returns_ticker.492ad16724"
+[0m18:12:35.177834 [info ] [Thread-2 (]: 6 of 22 START test not_null_mart_post_event_returns_cumulative_return_30d_pct .. [RUN]
+[0m18:12:35.178088 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_int_sector_returns_daily_return_pct.3a26e0a427, now test.ecb_sektorid.not_null_mart_post_event_returns_cumulative_return_30d_pct.4dec90b74b)
+[0m18:12:35.178322 [debug] [Thread-2 (]: Began compiling node test.ecb_sektorid.not_null_mart_post_event_returns_cumulative_return_30d_pct.4dec90b74b
+[0m18:12:35.180018 [debug] [Thread-2 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_mart_post_event_returns_cumulative_return_30d_pct.4dec90b74b"
+[0m18:12:35.178515 [debug] [Thread-1 (]: Using postgres connection "test.ecb_sektorid.not_null_int_sector_returns_ticker.492ad16724"
+[0m18:12:35.180240 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_int_sector_returns_ticker.492ad16724: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_int_sector_returns_ticker.492ad16724"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticker
+from "praktikum"."intermediate"."int_sector_returns"
+where ticker is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.180590 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:35.180821 [debug] [Thread-2 (]: Began executing node test.ecb_sektorid.not_null_mart_post_event_returns_cumulative_return_30d_pct.4dec90b74b
+[0m18:12:35.183472 [debug] [Thread-2 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_mart_post_event_returns_cumulative_return_30d_pct.4dec90b74b"
+[0m18:12:35.183952 [debug] [Thread-2 (]: Using postgres connection "test.ecb_sektorid.not_null_mart_post_event_returns_cumulative_return_30d_pct.4dec90b74b"
+[0m18:12:35.184132 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_mart_post_event_returns_cumulative_return_30d_pct.4dec90b74b: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_mart_post_event_returns_cumulative_return_30d_pct.4dec90b74b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select cumulative_return_30d_pct
+from "praktikum"."marts"."mart_post_event_returns"
+where cumulative_return_30d_pct is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.184295 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:12:35.184449 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.004 seconds
+[0m18:12:35.186293 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_int_sector_returns_ticker.492ad16724: ROLLBACK
+[0m18:12:35.186884 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_int_sector_returns_ticker.492ad16724: Close
+[0m18:12:35.187169 [info ] [Thread-1 (]: 5 of 22 PASS not_null_int_sector_returns_ticker ................................ [[32mPASS[0m in 0.01s]
+[0m18:12:35.187553 [debug] [Thread-1 (]: Finished running node test.ecb_sektorid.not_null_int_sector_returns_ticker.492ad16724
+[0m18:12:35.188028 [debug] [Thread-1 (]: Began running node test.ecb_sektorid.not_null_mart_post_event_returns_event_date.b39c09c97d
+[0m18:12:35.187829 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.003 seconds
+[0m18:12:35.188841 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_mart_post_event_returns_cumulative_return_30d_pct.4dec90b74b: ROLLBACK
+[0m18:12:35.188231 [info ] [Thread-1 (]: 7 of 22 START test not_null_mart_post_event_returns_event_date ................. [RUN]
+[0m18:12:35.189093 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_int_sector_returns_ticker.492ad16724, now test.ecb_sektorid.not_null_mart_post_event_returns_event_date.b39c09c97d)
+[0m18:12:35.189263 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_mart_post_event_returns_cumulative_return_30d_pct.4dec90b74b: Close
+[0m18:12:35.189648 [info ] [Thread-2 (]: 6 of 22 PASS not_null_mart_post_event_returns_cumulative_return_30d_pct ........ [[32mPASS[0m in 0.01s]
+[0m18:12:35.189397 [debug] [Thread-1 (]: Began compiling node test.ecb_sektorid.not_null_mart_post_event_returns_event_date.b39c09c97d
+[0m18:12:35.189920 [debug] [Thread-2 (]: Finished running node test.ecb_sektorid.not_null_mart_post_event_returns_cumulative_return_30d_pct.4dec90b74b
+[0m18:12:35.191832 [debug] [Thread-2 (]: Began running node test.ecb_sektorid.not_null_mart_post_event_returns_rate_change_bp.6eb36cf278
+[0m18:12:35.191639 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_mart_post_event_returns_event_date.b39c09c97d"
+[0m18:12:35.192014 [info ] [Thread-2 (]: 8 of 22 START test not_null_mart_post_event_returns_rate_change_bp ............. [RUN]
+[0m18:12:35.192251 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_mart_post_event_returns_cumulative_return_30d_pct.4dec90b74b, now test.ecb_sektorid.not_null_mart_post_event_returns_rate_change_bp.6eb36cf278)
+[0m18:12:35.192497 [debug] [Thread-2 (]: Began compiling node test.ecb_sektorid.not_null_mart_post_event_returns_rate_change_bp.6eb36cf278
+[0m18:12:35.192665 [debug] [Thread-1 (]: Began executing node test.ecb_sektorid.not_null_mart_post_event_returns_event_date.b39c09c97d
+[0m18:12:35.194110 [debug] [Thread-2 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_mart_post_event_returns_rate_change_bp.6eb36cf278"
+[0m18:12:35.195019 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_mart_post_event_returns_event_date.b39c09c97d"
+[0m18:12:35.195519 [debug] [Thread-2 (]: Began executing node test.ecb_sektorid.not_null_mart_post_event_returns_rate_change_bp.6eb36cf278
+[0m18:12:35.195695 [debug] [Thread-1 (]: Using postgres connection "test.ecb_sektorid.not_null_mart_post_event_returns_event_date.b39c09c97d"
+[0m18:12:35.197579 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_mart_post_event_returns_event_date.b39c09c97d: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_mart_post_event_returns_event_date.b39c09c97d"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select event_date
+from "praktikum"."marts"."mart_post_event_returns"
+where event_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.197404 [debug] [Thread-2 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_mart_post_event_returns_rate_change_bp.6eb36cf278"
+[0m18:12:35.197736 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:35.198341 [debug] [Thread-2 (]: Using postgres connection "test.ecb_sektorid.not_null_mart_post_event_returns_rate_change_bp.6eb36cf278"
+[0m18:12:35.198513 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_mart_post_event_returns_rate_change_bp.6eb36cf278: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_mart_post_event_returns_rate_change_bp.6eb36cf278"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select rate_change_bp
+from "praktikum"."marts"."mart_post_event_returns"
+where rate_change_bp is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.198676 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:12:35.201860 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.003 seconds
+[0m18:12:35.202535 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_mart_post_event_returns_rate_change_bp.6eb36cf278: ROLLBACK
+[0m18:12:35.202670 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.005 seconds
+[0m18:12:35.203250 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_mart_post_event_returns_event_date.b39c09c97d: ROLLBACK
+[0m18:12:35.203413 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_mart_post_event_returns_rate_change_bp.6eb36cf278: Close
+[0m18:12:35.203744 [info ] [Thread-2 (]: 8 of 22 PASS not_null_mart_post_event_returns_rate_change_bp ................... [[32mPASS[0m in 0.01s]
+[0m18:12:35.204333 [debug] [Thread-2 (]: Finished running node test.ecb_sektorid.not_null_mart_post_event_returns_rate_change_bp.6eb36cf278
+[0m18:12:35.204121 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_mart_post_event_returns_event_date.b39c09c97d: Close
+[0m18:12:35.204785 [info ] [Thread-1 (]: 7 of 22 PASS not_null_mart_post_event_returns_event_date ....................... [[32mPASS[0m in 0.02s]
+[0m18:12:35.204518 [debug] [Thread-2 (]: Began running node test.ecb_sektorid.not_null_mart_post_event_returns_ticker.9f3d2f8295
+[0m18:12:35.205252 [info ] [Thread-2 (]: 9 of 22 START test not_null_mart_post_event_returns_ticker ..................... [RUN]
+[0m18:12:35.205062 [debug] [Thread-1 (]: Finished running node test.ecb_sektorid.not_null_mart_post_event_returns_event_date.b39c09c97d
+[0m18:12:35.205639 [debug] [Thread-1 (]: Began running node test.ecb_sektorid.not_null_mart_prices_and_rates_close_price.595deb1379
+[0m18:12:35.205451 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_mart_post_event_returns_rate_change_bp.6eb36cf278, now test.ecb_sektorid.not_null_mart_post_event_returns_ticker.9f3d2f8295)
+[0m18:12:35.205989 [debug] [Thread-2 (]: Began compiling node test.ecb_sektorid.not_null_mart_post_event_returns_ticker.9f3d2f8295
+[0m18:12:35.205819 [info ] [Thread-1 (]: 10 of 22 START test not_null_mart_prices_and_rates_close_price ................. [RUN]
+[0m18:12:35.207670 [debug] [Thread-2 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_mart_post_event_returns_ticker.9f3d2f8295"
+[0m18:12:35.207862 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_mart_post_event_returns_event_date.b39c09c97d, now test.ecb_sektorid.not_null_mart_prices_and_rates_close_price.595deb1379)
+[0m18:12:35.208086 [debug] [Thread-1 (]: Began compiling node test.ecb_sektorid.not_null_mart_prices_and_rates_close_price.595deb1379
+[0m18:12:35.209687 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_mart_prices_and_rates_close_price.595deb1379"
+[0m18:12:35.209903 [debug] [Thread-2 (]: Began executing node test.ecb_sektorid.not_null_mart_post_event_returns_ticker.9f3d2f8295
+[0m18:12:35.210840 [debug] [Thread-2 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_mart_post_event_returns_ticker.9f3d2f8295"
+[0m18:12:35.211148 [debug] [Thread-1 (]: Began executing node test.ecb_sektorid.not_null_mart_prices_and_rates_close_price.595deb1379
+[0m18:12:35.212032 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_mart_prices_and_rates_close_price.595deb1379"
+[0m18:12:35.212245 [debug] [Thread-2 (]: Using postgres connection "test.ecb_sektorid.not_null_mart_post_event_returns_ticker.9f3d2f8295"
+[0m18:12:35.212436 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_mart_post_event_returns_ticker.9f3d2f8295: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_mart_post_event_returns_ticker.9f3d2f8295"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticker
+from "praktikum"."marts"."mart_post_event_returns"
+where ticker is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.212618 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:12:35.212796 [debug] [Thread-1 (]: Using postgres connection "test.ecb_sektorid.not_null_mart_prices_and_rates_close_price.595deb1379"
+[0m18:12:35.213149 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_mart_prices_and_rates_close_price.595deb1379: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_mart_prices_and_rates_close_price.595deb1379"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select close_price
+from "praktikum"."marts"."mart_prices_and_rates"
+where close_price is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.213313 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:35.217126 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.004 seconds
+[0m18:12:35.217846 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_mart_post_event_returns_ticker.9f3d2f8295: ROLLBACK
+[0m18:12:35.218077 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.005 seconds
+[0m18:12:35.218702 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_mart_prices_and_rates_close_price.595deb1379: ROLLBACK
+[0m18:12:35.218226 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_mart_post_event_returns_ticker.9f3d2f8295: Close
+[0m18:12:35.219001 [info ] [Thread-2 (]: 9 of 22 PASS not_null_mart_post_event_returns_ticker ........................... [[32mPASS[0m in 0.01s]
+[0m18:12:35.219166 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_mart_prices_and_rates_close_price.595deb1379: Close
+[0m18:12:35.219497 [debug] [Thread-2 (]: Finished running node test.ecb_sektorid.not_null_mart_post_event_returns_ticker.9f3d2f8295
+[0m18:12:35.219998 [debug] [Thread-2 (]: Began running node test.ecb_sektorid.not_null_mart_prices_and_rates_price_date.1da767d45c
+[0m18:12:35.219843 [info ] [Thread-1 (]: 10 of 22 PASS not_null_mart_prices_and_rates_close_price ....................... [[32mPASS[0m in 0.01s]
+[0m18:12:35.220217 [info ] [Thread-2 (]: 11 of 22 START test not_null_mart_prices_and_rates_price_date .................. [RUN]
+[0m18:12:35.220651 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_mart_post_event_returns_ticker.9f3d2f8295, now test.ecb_sektorid.not_null_mart_prices_and_rates_price_date.1da767d45c)
+[0m18:12:35.220469 [debug] [Thread-1 (]: Finished running node test.ecb_sektorid.not_null_mart_prices_and_rates_close_price.595deb1379
+[0m18:12:35.220816 [debug] [Thread-2 (]: Began compiling node test.ecb_sektorid.not_null_mart_prices_and_rates_price_date.1da767d45c
+[0m18:12:35.221000 [debug] [Thread-1 (]: Began running node test.ecb_sektorid.not_null_mart_prices_and_rates_ticker.ab96d9b284
+[0m18:12:35.222609 [debug] [Thread-2 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_mart_prices_and_rates_price_date.1da767d45c"
+[0m18:12:35.222802 [info ] [Thread-1 (]: 12 of 22 START test not_null_mart_prices_and_rates_ticker ...................... [RUN]
+[0m18:12:35.223040 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_mart_prices_and_rates_close_price.595deb1379, now test.ecb_sektorid.not_null_mart_prices_and_rates_ticker.ab96d9b284)
+[0m18:12:35.223301 [debug] [Thread-1 (]: Began compiling node test.ecb_sektorid.not_null_mart_prices_and_rates_ticker.ab96d9b284
+[0m18:12:35.224888 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_mart_prices_and_rates_ticker.ab96d9b284"
+[0m18:12:35.223484 [debug] [Thread-2 (]: Began executing node test.ecb_sektorid.not_null_mart_prices_and_rates_price_date.1da767d45c
+[0m18:12:35.225834 [debug] [Thread-2 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_mart_prices_and_rates_price_date.1da767d45c"
+[0m18:12:35.226141 [debug] [Thread-1 (]: Began executing node test.ecb_sektorid.not_null_mart_prices_and_rates_ticker.ab96d9b284
+[0m18:12:35.227046 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_mart_prices_and_rates_ticker.ab96d9b284"
+[0m18:12:35.227247 [debug] [Thread-2 (]: Using postgres connection "test.ecb_sektorid.not_null_mart_prices_and_rates_price_date.1da767d45c"
+[0m18:12:35.227440 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_mart_prices_and_rates_price_date.1da767d45c: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_mart_prices_and_rates_price_date.1da767d45c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select price_date
+from "praktikum"."marts"."mart_prices_and_rates"
+where price_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.227610 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:12:35.227781 [debug] [Thread-1 (]: Using postgres connection "test.ecb_sektorid.not_null_mart_prices_and_rates_ticker.ab96d9b284"
+[0m18:12:35.228140 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_mart_prices_and_rates_ticker.ab96d9b284: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_mart_prices_and_rates_ticker.ab96d9b284"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticker
+from "praktikum"."marts"."mart_prices_and_rates"
+where ticker is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.228322 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:35.232639 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.005 seconds
+[0m18:12:35.233269 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_mart_prices_and_rates_price_date.1da767d45c: ROLLBACK
+[0m18:12:35.233416 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.005 seconds
+[0m18:12:35.233918 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_mart_prices_and_rates_ticker.ab96d9b284: ROLLBACK
+[0m18:12:35.234087 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_mart_prices_and_rates_price_date.1da767d45c: Close
+[0m18:12:35.234572 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_mart_prices_and_rates_ticker.ab96d9b284: Close
+[0m18:12:35.234378 [info ] [Thread-2 (]: 11 of 22 PASS not_null_mart_prices_and_rates_price_date ........................ [[32mPASS[0m in 0.01s]
+[0m18:12:35.234862 [debug] [Thread-2 (]: Finished running node test.ecb_sektorid.not_null_mart_prices_and_rates_price_date.1da767d45c
+[0m18:12:35.235254 [debug] [Thread-2 (]: Began running node test.ecb_sektorid.not_null_mart_sector_betas_event_count.cb81017901
+[0m18:12:35.235081 [info ] [Thread-1 (]: 12 of 22 PASS not_null_mart_prices_and_rates_ticker ............................ [[32mPASS[0m in 0.01s]
+[0m18:12:35.235650 [debug] [Thread-1 (]: Finished running node test.ecb_sektorid.not_null_mart_prices_and_rates_ticker.ab96d9b284
+[0m18:12:35.235437 [info ] [Thread-2 (]: 13 of 22 START test not_null_mart_sector_betas_event_count ..................... [RUN]
+[0m18:12:35.235815 [debug] [Thread-1 (]: Began running node test.ecb_sektorid.not_null_mart_sector_betas_ticker.00fcab08f6
+[0m18:12:35.236160 [info ] [Thread-1 (]: 14 of 22 START test not_null_mart_sector_betas_ticker .......................... [RUN]
+[0m18:12:35.235995 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_mart_prices_and_rates_price_date.1da767d45c, now test.ecb_sektorid.not_null_mart_sector_betas_event_count.cb81017901)
+[0m18:12:35.236491 [debug] [Thread-2 (]: Began compiling node test.ecb_sektorid.not_null_mart_sector_betas_event_count.cb81017901
+[0m18:12:35.236332 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_mart_prices_and_rates_ticker.ab96d9b284, now test.ecb_sektorid.not_null_mart_sector_betas_ticker.00fcab08f6)
+[0m18:12:35.238273 [debug] [Thread-1 (]: Began compiling node test.ecb_sektorid.not_null_mart_sector_betas_ticker.00fcab08f6
+[0m18:12:35.238105 [debug] [Thread-2 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_mart_sector_betas_event_count.cb81017901"
+[0m18:12:35.240626 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_mart_sector_betas_ticker.00fcab08f6"
+[0m18:12:35.241442 [debug] [Thread-2 (]: Began executing node test.ecb_sektorid.not_null_mart_sector_betas_event_count.cb81017901
+[0m18:12:35.242554 [debug] [Thread-2 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_mart_sector_betas_event_count.cb81017901"
+[0m18:12:35.241672 [debug] [Thread-1 (]: Began executing node test.ecb_sektorid.not_null_mart_sector_betas_ticker.00fcab08f6
+[0m18:12:35.243480 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_mart_sector_betas_ticker.00fcab08f6"
+[0m18:12:35.243911 [debug] [Thread-2 (]: Using postgres connection "test.ecb_sektorid.not_null_mart_sector_betas_event_count.cb81017901"
+[0m18:12:35.244124 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_mart_sector_betas_event_count.cb81017901: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_mart_sector_betas_event_count.cb81017901"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select event_count
+from "praktikum"."marts"."mart_sector_betas"
+where event_count is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.244472 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:12:35.244318 [debug] [Thread-1 (]: Using postgres connection "test.ecb_sektorid.not_null_mart_sector_betas_ticker.00fcab08f6"
+[0m18:12:35.244703 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_mart_sector_betas_ticker.00fcab08f6: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_mart_sector_betas_ticker.00fcab08f6"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticker
+from "praktikum"."marts"."mart_sector_betas"
+where ticker is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.244930 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:35.248791 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.004 seconds
+[0m18:12:35.249470 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_mart_sector_betas_event_count.cb81017901: ROLLBACK
+[0m18:12:35.249607 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.005 seconds
+[0m18:12:35.250187 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_mart_sector_betas_ticker.00fcab08f6: ROLLBACK
+[0m18:12:35.250329 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_mart_sector_betas_event_count.cb81017901: Close
+[0m18:12:35.250617 [info ] [Thread-2 (]: 13 of 22 PASS not_null_mart_sector_betas_event_count ........................... [[32mPASS[0m in 0.01s]
+[0m18:12:35.250796 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_mart_sector_betas_ticker.00fcab08f6: Close
+[0m18:12:35.251242 [info ] [Thread-1 (]: 14 of 22 PASS not_null_mart_sector_betas_ticker ................................ [[32mPASS[0m in 0.01s]
+[0m18:12:35.251003 [debug] [Thread-2 (]: Finished running node test.ecb_sektorid.not_null_mart_sector_betas_event_count.cb81017901
+[0m18:12:35.251531 [debug] [Thread-1 (]: Finished running node test.ecb_sektorid.not_null_mart_sector_betas_ticker.00fcab08f6
+[0m18:12:35.251749 [debug] [Thread-2 (]: Began running node test.ecb_sektorid.not_null_stg_ecb_rates_date_ref.70f17c9540
+[0m18:12:35.252318 [info ] [Thread-2 (]: 15 of 22 START test not_null_stg_ecb_rates_date_ref ............................ [RUN]
+[0m18:12:35.252115 [debug] [Thread-1 (]: Began running node test.ecb_sektorid.not_null_stg_ecb_rates_rate_pct.bf44c61187
+[0m18:12:35.252678 [info ] [Thread-1 (]: 16 of 22 START test not_null_stg_ecb_rates_rate_pct ............................ [RUN]
+[0m18:12:35.252509 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_mart_sector_betas_event_count.cb81017901, now test.ecb_sektorid.not_null_stg_ecb_rates_date_ref.70f17c9540)
+[0m18:12:35.253045 [debug] [Thread-2 (]: Began compiling node test.ecb_sektorid.not_null_stg_ecb_rates_date_ref.70f17c9540
+[0m18:12:35.252859 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_mart_sector_betas_ticker.00fcab08f6, now test.ecb_sektorid.not_null_stg_ecb_rates_rate_pct.bf44c61187)
+[0m18:12:35.254693 [debug] [Thread-2 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_stg_ecb_rates_date_ref.70f17c9540"
+[0m18:12:35.254861 [debug] [Thread-1 (]: Began compiling node test.ecb_sektorid.not_null_stg_ecb_rates_rate_pct.bf44c61187
+[0m18:12:35.256395 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_stg_ecb_rates_rate_pct.bf44c61187"
+[0m18:12:35.256836 [debug] [Thread-2 (]: Began executing node test.ecb_sektorid.not_null_stg_ecb_rates_date_ref.70f17c9540
+[0m18:12:35.257879 [debug] [Thread-2 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_stg_ecb_rates_date_ref.70f17c9540"
+[0m18:12:35.257031 [debug] [Thread-1 (]: Began executing node test.ecb_sektorid.not_null_stg_ecb_rates_rate_pct.bf44c61187
+[0m18:12:35.258807 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_stg_ecb_rates_rate_pct.bf44c61187"
+[0m18:12:35.259231 [debug] [Thread-2 (]: Using postgres connection "test.ecb_sektorid.not_null_stg_ecb_rates_date_ref.70f17c9540"
+[0m18:12:35.259581 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_stg_ecb_rates_date_ref.70f17c9540: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_stg_ecb_rates_date_ref.70f17c9540"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select date_ref
+from "praktikum"."staging"."stg_ecb_rates"
+where date_ref is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.259735 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:12:35.259428 [debug] [Thread-1 (]: Using postgres connection "test.ecb_sektorid.not_null_stg_ecb_rates_rate_pct.bf44c61187"
+[0m18:12:35.259987 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_stg_ecb_rates_rate_pct.bf44c61187: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_stg_ecb_rates_rate_pct.bf44c61187"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select rate_pct
+from "praktikum"."staging"."stg_ecb_rates"
+where rate_pct is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.260224 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:35.264328 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.005 seconds
+[0m18:12:35.264950 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_stg_ecb_rates_date_ref.70f17c9540: ROLLBACK
+[0m18:12:35.265088 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.005 seconds
+[0m18:12:35.265659 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_stg_ecb_rates_rate_pct.bf44c61187: ROLLBACK
+[0m18:12:35.265818 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_stg_ecb_rates_date_ref.70f17c9540: Close
+[0m18:12:35.266077 [info ] [Thread-2 (]: 15 of 22 PASS not_null_stg_ecb_rates_date_ref .................................. [[32mPASS[0m in 0.01s]
+[0m18:12:35.266445 [debug] [Thread-2 (]: Finished running node test.ecb_sektorid.not_null_stg_ecb_rates_date_ref.70f17c9540
+[0m18:12:35.266250 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_stg_ecb_rates_rate_pct.bf44c61187: Close
+[0m18:12:35.266886 [info ] [Thread-1 (]: 16 of 22 PASS not_null_stg_ecb_rates_rate_pct .................................. [[32mPASS[0m in 0.01s]
+[0m18:12:35.266637 [debug] [Thread-2 (]: Began running node test.ecb_sektorid.not_null_stg_index_prices_close_price.cc2d5ac5d0
+[0m18:12:35.267339 [info ] [Thread-2 (]: 17 of 22 START test not_null_stg_index_prices_close_price ...................... [RUN]
+[0m18:12:35.267168 [debug] [Thread-1 (]: Finished running node test.ecb_sektorid.not_null_stg_ecb_rates_rate_pct.bf44c61187
+[0m18:12:35.267706 [debug] [Thread-1 (]: Began running node test.ecb_sektorid.not_null_stg_index_prices_price_date.41d9ac9410
+[0m18:12:35.267525 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_stg_ecb_rates_date_ref.70f17c9540, now test.ecb_sektorid.not_null_stg_index_prices_close_price.cc2d5ac5d0)
+[0m18:12:35.267873 [info ] [Thread-1 (]: 18 of 22 START test not_null_stg_index_prices_price_date ....................... [RUN]
+[0m18:12:35.268044 [debug] [Thread-2 (]: Began compiling node test.ecb_sektorid.not_null_stg_index_prices_close_price.cc2d5ac5d0
+[0m18:12:35.268235 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_stg_ecb_rates_rate_pct.bf44c61187, now test.ecb_sektorid.not_null_stg_index_prices_price_date.41d9ac9410)
+[0m18:12:35.270294 [debug] [Thread-1 (]: Began compiling node test.ecb_sektorid.not_null_stg_index_prices_price_date.41d9ac9410
+[0m18:12:35.270089 [debug] [Thread-2 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_stg_index_prices_close_price.cc2d5ac5d0"
+[0m18:12:35.271725 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_stg_index_prices_price_date.41d9ac9410"
+[0m18:12:35.272271 [debug] [Thread-2 (]: Began executing node test.ecb_sektorid.not_null_stg_index_prices_close_price.cc2d5ac5d0
+[0m18:12:35.273316 [debug] [Thread-2 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_stg_index_prices_close_price.cc2d5ac5d0"
+[0m18:12:35.272468 [debug] [Thread-1 (]: Began executing node test.ecb_sektorid.not_null_stg_index_prices_price_date.41d9ac9410
+[0m18:12:35.274239 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_stg_index_prices_price_date.41d9ac9410"
+[0m18:12:35.274675 [debug] [Thread-2 (]: Using postgres connection "test.ecb_sektorid.not_null_stg_index_prices_close_price.cc2d5ac5d0"
+[0m18:12:35.274856 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_stg_index_prices_close_price.cc2d5ac5d0: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_stg_index_prices_close_price.cc2d5ac5d0"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select close_price
+from "praktikum"."staging"."stg_index_prices"
+where close_price is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.275202 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:12:35.275058 [debug] [Thread-1 (]: Using postgres connection "test.ecb_sektorid.not_null_stg_index_prices_price_date.41d9ac9410"
+[0m18:12:35.275484 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_stg_index_prices_price_date.41d9ac9410: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_stg_index_prices_price_date.41d9ac9410"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select price_date
+from "praktikum"."staging"."stg_index_prices"
+where price_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.275711 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:35.280019 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.004 seconds
+[0m18:12:35.280672 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_stg_index_prices_price_date.41d9ac9410: ROLLBACK
+[0m18:12:35.280882 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_stg_index_prices_price_date.41d9ac9410: Close
+[0m18:12:35.281148 [info ] [Thread-1 (]: 18 of 22 PASS not_null_stg_index_prices_price_date ............................. [[32mPASS[0m in 0.01s]
+[0m18:12:35.281588 [debug] [Thread-1 (]: Finished running node test.ecb_sektorid.not_null_stg_index_prices_price_date.41d9ac9410
+[0m18:12:35.281824 [debug] [Thread-1 (]: Began running node test.ecb_sektorid.not_null_stg_index_prices_ticker.4bf1b23f7b
+[0m18:12:35.282037 [info ] [Thread-1 (]: 19 of 22 START test not_null_stg_index_prices_ticker ........................... [RUN]
+[0m18:12:35.282247 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_stg_index_prices_price_date.41d9ac9410, now test.ecb_sektorid.not_null_stg_index_prices_ticker.4bf1b23f7b)
+[0m18:12:35.282414 [debug] [Thread-1 (]: Began compiling node test.ecb_sektorid.not_null_stg_index_prices_ticker.4bf1b23f7b
+[0m18:12:35.285267 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecb_sektorid.not_null_stg_index_prices_ticker.4bf1b23f7b"
+[0m18:12:35.285456 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.010 seconds
+[0m18:12:35.286050 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_stg_index_prices_close_price.cc2d5ac5d0: ROLLBACK
+[0m18:12:35.286354 [debug] [Thread-2 (]: On test.ecb_sektorid.not_null_stg_index_prices_close_price.cc2d5ac5d0: Close
+[0m18:12:35.286776 [info ] [Thread-2 (]: 17 of 22 PASS not_null_stg_index_prices_close_price ............................ [[32mPASS[0m in 0.02s]
+[0m18:12:35.286567 [debug] [Thread-1 (]: Began executing node test.ecb_sektorid.not_null_stg_index_prices_ticker.4bf1b23f7b
+[0m18:12:35.287113 [debug] [Thread-2 (]: Finished running node test.ecb_sektorid.not_null_stg_index_prices_close_price.cc2d5ac5d0
+[0m18:12:35.288244 [debug] [Thread-2 (]: Began running node test.ecb_sektorid.unique_int_aligned_ecb_rates_price_date.53a0b942e5
+[0m18:12:35.288051 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecb_sektorid.not_null_stg_index_prices_ticker.4bf1b23f7b"
+[0m18:12:35.288416 [info ] [Thread-2 (]: 20 of 22 START test unique_int_aligned_ecb_rates_price_date .................... [RUN]
+[0m18:12:35.288652 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_stg_index_prices_close_price.cc2d5ac5d0, now test.ecb_sektorid.unique_int_aligned_ecb_rates_price_date.53a0b942e5)
+[0m18:12:35.288872 [debug] [Thread-2 (]: Began compiling node test.ecb_sektorid.unique_int_aligned_ecb_rates_price_date.53a0b942e5
+[0m18:12:35.289079 [debug] [Thread-1 (]: Using postgres connection "test.ecb_sektorid.not_null_stg_index_prices_ticker.4bf1b23f7b"
+[0m18:12:35.291625 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_stg_index_prices_ticker.4bf1b23f7b: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.not_null_stg_index_prices_ticker.4bf1b23f7b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticker
+from "praktikum"."staging"."stg_index_prices"
+where ticker is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.291437 [debug] [Thread-2 (]: Writing injected SQL for node "test.ecb_sektorid.unique_int_aligned_ecb_rates_price_date.53a0b942e5"
+[0m18:12:35.291779 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:35.292327 [debug] [Thread-2 (]: Began executing node test.ecb_sektorid.unique_int_aligned_ecb_rates_price_date.53a0b942e5
+[0m18:12:35.294254 [debug] [Thread-2 (]: Writing runtime sql for node "test.ecb_sektorid.unique_int_aligned_ecb_rates_price_date.53a0b942e5"
+[0m18:12:35.295031 [debug] [Thread-2 (]: Using postgres connection "test.ecb_sektorid.unique_int_aligned_ecb_rates_price_date.53a0b942e5"
+[0m18:12:35.295261 [debug] [Thread-2 (]: On test.ecb_sektorid.unique_int_aligned_ecb_rates_price_date.53a0b942e5: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.unique_int_aligned_ecb_rates_price_date.53a0b942e5"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    price_date as unique_field,
+    count(*) as n_records
+
+from "praktikum"."intermediate"."int_aligned_ecb_rates"
+where price_date is not null
+group by price_date
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.295434 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:12:35.295791 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.004 seconds
+[0m18:12:35.296373 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_stg_index_prices_ticker.4bf1b23f7b: ROLLBACK
+[0m18:12:35.296575 [debug] [Thread-1 (]: On test.ecb_sektorid.not_null_stg_index_prices_ticker.4bf1b23f7b: Close
+[0m18:12:35.296848 [info ] [Thread-1 (]: 19 of 22 PASS not_null_stg_index_prices_ticker ................................. [[32mPASS[0m in 0.01s]
+[0m18:12:35.297747 [debug] [Thread-1 (]: Finished running node test.ecb_sektorid.not_null_stg_index_prices_ticker.4bf1b23f7b
+[0m18:12:35.298069 [debug] [Thread-1 (]: Began running node test.ecb_sektorid.unique_mart_sector_betas_ticker.a2817518e4
+[0m18:12:35.299137 [info ] [Thread-1 (]: 21 of 22 START test unique_mart_sector_betas_ticker ............................ [RUN]
+[0m18:12:35.299386 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.not_null_stg_index_prices_ticker.4bf1b23f7b, now test.ecb_sektorid.unique_mart_sector_betas_ticker.a2817518e4)
+[0m18:12:35.299601 [debug] [Thread-1 (]: Began compiling node test.ecb_sektorid.unique_mart_sector_betas_ticker.a2817518e4
+[0m18:12:35.301336 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecb_sektorid.unique_mart_sector_betas_ticker.a2817518e4"
+[0m18:12:35.301757 [debug] [Thread-1 (]: Began executing node test.ecb_sektorid.unique_mart_sector_betas_ticker.a2817518e4
+[0m18:12:35.302671 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecb_sektorid.unique_mart_sector_betas_ticker.a2817518e4"
+[0m18:12:35.303049 [debug] [Thread-1 (]: Using postgres connection "test.ecb_sektorid.unique_mart_sector_betas_ticker.a2817518e4"
+[0m18:12:35.303216 [debug] [Thread-1 (]: On test.ecb_sektorid.unique_mart_sector_betas_ticker.a2817518e4: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.unique_mart_sector_betas_ticker.a2817518e4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    ticker as unique_field,
+    count(*) as n_records
+
+from "praktikum"."marts"."mart_sector_betas"
+where ticker is not null
+group by ticker
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.303376 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:35.306627 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.003 seconds
+[0m18:12:35.307289 [debug] [Thread-1 (]: On test.ecb_sektorid.unique_mart_sector_betas_ticker.a2817518e4: ROLLBACK
+[0m18:12:35.307497 [debug] [Thread-1 (]: On test.ecb_sektorid.unique_mart_sector_betas_ticker.a2817518e4: Close
+[0m18:12:35.307747 [info ] [Thread-1 (]: 21 of 22 PASS unique_mart_sector_betas_ticker .................................. [[32mPASS[0m in 0.01s]
+[0m18:12:35.308006 [debug] [Thread-1 (]: Finished running node test.ecb_sektorid.unique_mart_sector_betas_ticker.a2817518e4
+[0m18:12:35.308239 [debug] [Thread-1 (]: Began running node test.ecb_sektorid.unique_stg_ecb_rates_date_ref.2b6eb260da
+[0m18:12:35.308458 [info ] [Thread-1 (]: 22 of 22 START test unique_stg_ecb_rates_date_ref .............................. [RUN]
+[0m18:12:35.308693 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ecb_sektorid.unique_mart_sector_betas_ticker.a2817518e4, now test.ecb_sektorid.unique_stg_ecb_rates_date_ref.2b6eb260da)
+[0m18:12:35.308892 [debug] [Thread-1 (]: Began compiling node test.ecb_sektorid.unique_stg_ecb_rates_date_ref.2b6eb260da
+[0m18:12:35.310557 [debug] [Thread-1 (]: Writing injected SQL for node "test.ecb_sektorid.unique_stg_ecb_rates_date_ref.2b6eb260da"
+[0m18:12:35.310937 [debug] [Thread-1 (]: Began executing node test.ecb_sektorid.unique_stg_ecb_rates_date_ref.2b6eb260da
+[0m18:12:35.311824 [debug] [Thread-1 (]: Writing runtime sql for node "test.ecb_sektorid.unique_stg_ecb_rates_date_ref.2b6eb260da"
+[0m18:12:35.312175 [debug] [Thread-1 (]: Using postgres connection "test.ecb_sektorid.unique_stg_ecb_rates_date_ref.2b6eb260da"
+[0m18:12:35.312341 [debug] [Thread-1 (]: On test.ecb_sektorid.unique_stg_ecb_rates_date_ref.2b6eb260da: /* {"app": "dbt", "dbt_version": "1.12.0b1", "profile_name": "ecb_sektorid", "target_name": "dev", "node_id": "test.ecb_sektorid.unique_stg_ecb_rates_date_ref.2b6eb260da"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    date_ref as unique_field,
+    count(*) as n_records
+
+from "praktikum"."staging"."stg_ecb_rates"
+where date_ref is not null
+group by date_ref
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:12:35.312495 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:35.313164 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.018 seconds
+[0m18:12:35.315365 [debug] [Thread-2 (]: On test.ecb_sektorid.unique_int_aligned_ecb_rates_price_date.53a0b942e5: ROLLBACK
+[0m18:12:35.315609 [debug] [Thread-2 (]: On test.ecb_sektorid.unique_int_aligned_ecb_rates_price_date.53a0b942e5: Close
+[0m18:12:35.315923 [info ] [Thread-2 (]: 20 of 22 PASS unique_int_aligned_ecb_rates_price_date .......................... [[32mPASS[0m in 0.03s]
+[0m18:12:35.316177 [debug] [Thread-2 (]: Finished running node test.ecb_sektorid.unique_int_aligned_ecb_rates_price_date.53a0b942e5
+[0m18:12:35.316384 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.004 seconds
+[0m18:12:35.316935 [debug] [Thread-1 (]: On test.ecb_sektorid.unique_stg_ecb_rates_date_ref.2b6eb260da: ROLLBACK
+[0m18:12:35.317152 [debug] [Thread-1 (]: On test.ecb_sektorid.unique_stg_ecb_rates_date_ref.2b6eb260da: Close
+[0m18:12:35.317379 [info ] [Thread-1 (]: 22 of 22 PASS unique_stg_ecb_rates_date_ref .................................... [[32mPASS[0m in 0.01s]
+[0m18:12:35.317615 [debug] [Thread-1 (]: Finished running node test.ecb_sektorid.unique_stg_ecb_rates_date_ref.2b6eb260da
+[0m18:12:35.318202 [debug] [MainThread]: On master: COMMIT
+[0m18:12:35.318387 [debug] [MainThread]: Using postgres connection "master"
+[0m18:12:35.318517 [debug] [MainThread]: On master: COMMIT
+[0m18:12:35.318636 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:12:35.321436 [debug] [MainThread]: SQL status: COMMIT in 0.003 seconds
+[0m18:12:35.321584 [debug] [MainThread]: On master: Close
+[0m18:12:35.321748 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:12:35.321888 [debug] [MainThread]: Connection 'test.ecb_sektorid.unique_stg_ecb_rates_date_ref.2b6eb260da' was properly closed.
+[0m18:12:35.322023 [debug] [MainThread]: Connection 'test.ecb_sektorid.unique_int_aligned_ecb_rates_price_date.53a0b942e5' was properly closed.
+[0m18:12:35.322175 [info ] [MainThread]: 
+[0m18:12:35.322326 [info ] [MainThread]: Finished running 22 data tests in 0 hours 0 minutes and 0.27 seconds (0.27s).
+[0m18:12:35.323508 [debug] [MainThread]: Command end result
+[0m18:12:35.340369 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m18:12:35.341965 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m18:12:35.345571 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m18:12:35.345738 [info ] [MainThread]: 
+[0m18:12:35.345913 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:12:35.346070 [info ] [MainThread]: 
+[0m18:12:35.346221 [info ] [MainThread]: Done. PASS=22 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=22
+[0m18:12:35.346654 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 0.60058457, "process_in_blocks": "0", "process_kernel_time": 0.071706, "process_mem_max_rss": "141440", "process_out_blocks": "2538", "process_user_time": 1.077595}
+[0m18:12:35.346847 [debug] [MainThread]: Command `dbt test` succeeded at 18:12:35.346815 after 0.60 seconds
+[0m18:12:35.347012 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb6b06090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffbc2dff20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb9da6060>]}
+[0m18:12:35.347182 [debug] [MainThread]: Flushing usage events
+[0m18:12:35.916493 [debug] [MainThread]: An error was encountered while trying to flush usage events

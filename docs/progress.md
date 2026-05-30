@@ -17,18 +17,29 @@
 - [ ] Kogu andmevoog on reaalselt käivitatud ja verifitseeritud (testimisel)
 - [ ] Vähemalt üks näidikulaud on Supersetis nähtaval (vaja Supersetis käsitsi luua)
 
-## Järgmised sammud
+## Juhis dockeri käivitamiseks
 
-- Käivitada stack (`docker compose up -d --build`) ja triggerida DAG Airflowi UI-st
-- Kontrollida, et ECB API vastab oodatud formaadis ja andmed jõuavad staging tabelisse
+1. **Käivita stack** (`docker compose up -d --build`)
+  - Kontrolli konteinerite tervist (`docker compose ps`) -> peaks olema healthy
+  
+2. **Triggerida DAG Airflowi UI-st**
+  - Ava Airflow: http://localhost:8080 
+    - kasutaja: airflow 
+    - parool .env failis (by default: airflow)
+  - Lülita sisse pipeline 'ecb-pipeline' -> käivitub koheselt (+ automaatselt iga päev) -> oota lõpuni
+    - võib võtta 3-5 minutit, kuna laeb 3-5 aasta Yahoo andmeid
+  - vt 'Kontrollpunkt' allpool andmete eduka salvestamise tagamiseks
+
+3. **Tutvu Superseti visuaalidega**
+  - Ava Superset: http://localhost:8088 
+    - kasutaja: admin
+    - parool .env failis (by default: admin)
 - Luua Supersetis analytics-db andmebaasi ühendus ja vähemalt üks visuaal (nt ECB intressimäär ajas)
 - Vaadata üle dbt testi tulemused, lisada puuduvad kvaliteedikontrollid (Kerttu)
 - Täiendada Superset dashboard kõigi kolme mõõdikuga (Liis)
 
 ## Mis takistab
-
-- Andmevoog on kirjutatud kuid veel käivitamata — tehnilisi üllatusi võib esineda esimesel käivitusel
-- Superset'i visuaal on hetkel loomata, vajab käsitsi seadistamist (vt `docs/getting-started.md`)
+# TO BE ANNOUNCED
 - Kui port 8080 või 8088 on hõivatud, muuda `.env` failis `AIRFLOW_PORT_HOST` ja `SUPERSET_PORT_HOST`
 
 ## Kontrollpunkt
@@ -41,12 +52,6 @@ docker compose up -d --build
 docker compose ps
 # Oodatav: kõik teenused 'running' või 'healthy'
 # ecb-airflow-init ja ecb-superset-init võivad olla 'exited (0)' — see on normaalne
-
-# 3. Ava Airflow: http://localhost:8080 (kasutaja: airflow / parool: airflow)
-#    → leia DAG 'ecb_pipeline'
-#    → lülita sisse (unpause)
-#    → vajuta Trigger DAG nuppu
-#    → esimene käivitus võtab ~3-5 minutit (yfinance laeb 5 aasta ajaloo)
 
 # 4. Kontrolli, et andmed jõudsid staging tabelisse
 docker compose exec analytics-db psql -U praktikum -d praktikum -c \
