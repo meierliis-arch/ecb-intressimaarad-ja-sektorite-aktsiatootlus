@@ -267,7 +267,38 @@ services:
       DATABASE_URI: "postgresql+psycopg2://${SUPERSET_DB_USER}:${SUPERSET_DB_PASSWORD}@superset-db:5432/${SUPERSET_DB_NAME}"
       SECRET_KEY: ${SUPERSET_SECRET_KEY}
     command: ["/app/docker/entrypoints/run-server.sh"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8088/health"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
     restart: always
+
+  # ---------------------------------------------------------------------------
+  # Superset ühekordne andmebaasi ühenduse ja dashboard'i import
+  # Käivitub pärast superset teenuse tervislikkuse kinnitust.
+  # Loeb paroole .env failist (mis ei ole gitis) — gitis ei ole ühtegi salasõna.
+  # ---------------------------------------------------------------------------
+  superset-import:
+    build:
+      context: .
+      dockerfile: Dockerfile.superset
+    container_name: ecb-superset-import
+    depends_on:
+      superset:
+        condition: service_healthy
+    volumes:
+      - ./superset/superset_config.py:/app/superset_config.py
+      - ./superset/dashboard_export.zip:/app/dashboard_export.zip
+      - ./superset/import_dashboard.py:/app/import_dashboard.py
+    environment:
+      SUPERSET_URL: "http://superset:8088"
+      ADMIN_USERNAME: ${SUPERSET_ADMIN_USER}
+      ADMIN_PASSWORD: ${SUPERSET_ADMIN_PASSWORD}
+      ANALYTICS_DB_PASSWORD: ${POSTGRES_PASSWORD:-praktikum}
+    command: ["python3", "/app/import_dashboard.py"]
+    restart: "no"
 
 volumes:
   analytics-db-volume:
