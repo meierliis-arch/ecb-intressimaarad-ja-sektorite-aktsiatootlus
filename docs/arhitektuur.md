@@ -16,7 +16,7 @@ Kuidas on Euroopa Keskpanga(EKP) hoiustamise püsivõimaluse intressimäär seot
 | Allikas | Tüüp | Ajas muutuv?                | Roll |
 |---------|------|-----------------------------|------|
 | Yahoo Finance | `yfinance` pythoni pakett | Jah, igal kauplemispäeval   | Sektorite indeksfondide ajalooline hinnainfo kauplemispäevadel |
-| ECB Data Portal | API/CSV | Jah, intressiotsuste korral | ECB hoiustamise püsivõimaluse intressimäära muutuste ajalugu |
+| ECB Data Portal | API/XML | Jah, intressiotsuste korral | ECB hoiustamise püsivõimaluse intressimäära muutuste ajalugu |
 | `seeds/indeksid.csv` | seed | Ei, staatiline              | STOXX Europe 600 erinevate sektorite indeksfondide sümbolid yfinance päringuteks|
 
 ## Andmevoog
