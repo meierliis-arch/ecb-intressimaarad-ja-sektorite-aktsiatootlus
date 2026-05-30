@@ -20,7 +20,7 @@ DASHBOARD_ZIP = "/app/dashboard_export.zip"
 
 # The key must match the database YAML path inside the zip
 # (path relative to the export root folder, not the full zip path)
-DB_YAML_KEY = "databases/PostgreSQL.yaml"
+DB_YAML_KEY = "databases/Our_Database_Display_Name.yaml"
 
 
 def wait_for_superset(max_wait: int = 180) -> None:
