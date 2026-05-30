@@ -262,7 +262,7 @@ services:
         condition: service_completed_successfully
     volumes:
       - ./superset/superset_config.py:/app/superset_config.py
-      - ./superset:/app/superset
+      - ./superset:/app/ecb_superset
       - superset-home:/app/superset_home
     environment:
       SUPERSET_CONFIG_PATH: /app/superset_config.py
@@ -279,7 +279,7 @@ services:
       - -c
       - |
         . /app/.venv/bin/activate && \
-        python /app/superset/zip_dashboard.py /app/superset/dashboard_export /tmp/dashboard.zip && \
+        python /app/ecb_superset/zip_dashboard.py /app/ecb_superset/dashboard_export /tmp/dashboard.zip && \
         superset import-dashboards --path /tmp/dashboard.zip --username $${SUPERSET_ADMIN_USER}
     restart: "no"
 
