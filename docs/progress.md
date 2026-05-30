@@ -46,7 +46,7 @@ docker compose ps
 #    → leia DAG 'ecb_pipeline'
 #    → lülita sisse (unpause)
 #    → vajuta Trigger DAG nuppu
-#    → esimene käivitus võtab ~3-5 minutit (yfinance laeb 10 aasta ajaloo)
+#    → esimene käivitus võtab ~3-5 minutit (yfinance laeb 5 aasta ajaloo)
 
 # 4. Kontrolli, et andmed jõudsid staging tabelisse
 docker compose exec analytics-db psql -U praktikum -d praktikum -c \
