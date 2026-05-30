@@ -224,13 +224,18 @@ def laadi_indeksite_hinnad(**context):
     run_id = _start_run(hook, "yfinance")
     now = datetime.now(timezone.utc)
 
-    # curl_cffi imiteerib Chrome'i TLS-kätlust täpselt — Yahoo bot-kaitse ei suuda
-    # seda Python/requests päringust eristada (JA3/JA4 fingerprint = Chrome120).
-    # See lahendab Yahoo rate-limiting probleemi, mis ei ole IP-põhine vaid
-    # TLS-fingerprint-põhine (Python/requests jääb alati vahele, Chrome ei jää).
-    from curl_cffi import requests as curl_requests
-    custom_session = curl_requests.Session(impersonate="chrome120")
-    print(f"Session: {type(custom_session).__module__}.{type(custom_session).__name__} (impersonate=chrome120)")
+    # curl_cffi on installitud _PIP_ADDITIONAL_REQUIREMENTS kaudu.
+    # yfinance 0.2.37+ tuvastab curl_cffi automaatselt ja kasutab Chrome TLS-kätlust (ei pea käsitsi edastama)
+    # Prior plain request (http_session) does a distinct Python handshake (TLS - transport layer security) 
+    # curl_cffi instead uses actual Chrome's TLS implementation, so the handshake is genuine and FY cant make difference on protocol level
+    # # impersonate='chrome120' means "pretend to be Chrome" 
+
+    # curl_cffi
+    try:
+        import curl_cffi  # noqa: F401
+        print(f"curl_cffi {curl_cffi.__version__} on saadaval — yfinance kasutab Chrome TLS automaatselt")
+    except ImportError:
+        print("HOIATUS: curl_cffi ei ole installitud — Yahoo võib blokeerida päringuid")
 
     MAX_TICKER_ATTEMPTS = 3
 
@@ -251,7 +256,7 @@ def laadi_indeksite_hinnad(**context):
             df = None
             for attempt in range(MAX_TICKER_ATTEMPTS):
                 try:
-                    yf_ticker = yf.Ticker(ticker, session=custom_session)
+                    yf_ticker = yf.Ticker(ticker)
                     df = yf_ticker.history(
                         start=str(start),
                         end=str(end),
@@ -262,7 +267,7 @@ def laadi_indeksite_hinnad(**context):
                     break
                 except Exception as exc:
                     if attempt < MAX_TICKER_ATTEMPTS - 1:
-                        delay = 10 * (2 ** attempt)
+                        delay = 4 * (2 ** attempt)
                         print(
                             f"HOIATUS: {ticker} katse {attempt + 1}/{MAX_TICKER_ATTEMPTS} "
                             f"ebaõnnestus: {exc}. Ootan {delay}s..."
