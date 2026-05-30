@@ -47,7 +47,7 @@ x-airflow-common:
     POSTGRES_DB: ${POSTGRES_DB:-praktikum}
     # Pip-paketid, mis installitakse Airflow konteinerisse käivitamisel
     # dbt-postgres: transformatsioonid; yfinance + pandas: indeksite hindade tõmbamine
-    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-dbt-postgres==1.10.0 yfinance==0.2.55 pandas==2.2.3 requests==2.32.3}
+    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-dbt-postgres==1.10.0 yfinance==0.2.55 pandas==2.2.3 requests==2.32.3 curl_cffi==0.7.4}
   volumes:
     - ./airflow/dags:/opt/airflow/dags
     - airflow-logs:/opt/airflow/logs

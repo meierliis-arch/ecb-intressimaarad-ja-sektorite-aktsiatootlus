@@ -224,9 +224,13 @@ def laadi_indeksite_hinnad(**context):
     run_id = _start_run(hook, "yfinance")
     now = datetime.now(timezone.utc)
 
-    # Loome sessiooni, mis kannab browser-sarnaseid päiseid — vähendab Yahoo blokke.
-    # Session edastatakse yf.Ticker-ile, et see tegelikult kasutusel oleks.
-    custom_session = _http_session()
+    # curl_cffi imiteerib Chrome'i TLS-kätlust täpselt — Yahoo bot-kaitse ei suuda
+    # seda Python/requests päringust eristada (JA3/JA4 fingerprint = Chrome120).
+    # See lahendab Yahoo rate-limiting probleemi, mis ei ole IP-põhine vaid
+    # TLS-fingerprint-põhine (Python/requests jääb alati vahele, Chrome ei jää).
+    from curl_cffi import requests as curl_requests
+    custom_session = curl_requests.Session(impersonate="chrome120")
+    print(f"Session: {type(custom_session).__module__}.{type(custom_session).__name__} (impersonate=chrome120)")
 
     MAX_TICKER_ATTEMPTS = 3
 
@@ -258,7 +262,7 @@ def laadi_indeksite_hinnad(**context):
                     break
                 except Exception as exc:
                     if attempt < MAX_TICKER_ATTEMPTS - 1:
-                        delay = 5 * (2 ** attempt)
+                        delay = 10 * (2 ** attempt)
                         print(
                             f"HOIATUS: {ticker} katse {attempt + 1}/{MAX_TICKER_ATTEMPTS} "
                             f"ebaõnnestus: {exc}. Ootan {delay}s..."
