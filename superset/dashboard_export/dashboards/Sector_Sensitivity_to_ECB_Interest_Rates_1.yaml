@@ -1,0 +1,212 @@
+dashboard_title: Sector Sensitivity to ECB Interest Rates (%)
+description: null
+css: ''
+slug: null
+certified_by: ''
+certification_details: ''
+published: true
+uuid: 1c1693f7-138b-442b-b15a-59d5a9685884
+position:
+  CHART-explore-1-1:
+    children: []
+    id: CHART-explore-1-1
+    meta:
+      chartId: 1
+      height: 50
+      sliceName: Betas by Sectors
+      uuid: ed2a8539-8687-482b-94db-c6c9eceafeb7
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-26ep0yWxOgwTnbQaGwhKy
+    type: CHART
+  CHART-explore-2-1:
+    children: []
+    id: CHART-explore-2-1
+    meta:
+      chartId: 2
+      height: 18
+      sliceName: ECB interest rate
+      uuid: 3b139eae-aa3d-4034-ab5a-859d8a30549b
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-R1e9BXo04r8_GxdItfimQ
+    - COLUMN-N6rn5i2yj1W8pjN3uUFTO
+    - ROW-M2UkDxX9o9_wnH-nLpYU9
+    type: CHART
+  CHART-explore-3-1:
+    children: []
+    id: CHART-explore-3-1
+    meta:
+      chartId: 3
+      height: 50
+      sliceName: Dynamics of Indice Prices & ECB rates
+      uuid: ca87afdc-16e0-468e-ba17-f4a90ece6895
+      width: 8
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-26ep0yWxOgwTnbQaGwhKy
+    type: CHART
+  CHART-explore-4-1:
+    children: []
+    id: CHART-explore-4-1
+    meta:
+      chartId: 4
+      height: 50
+      sliceName: Sector Price Change to Betas
+      uuid: 84cf5b3f-176e-4731-82be-e22d2e31568a
+      width: 8
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-ftkFfkgYcCJOu7XyOrOWV
+    type: CHART
+  COLUMN-N6rn5i2yj1W8pjN3uUFTO:
+    children:
+    - ROW-M2UkDxX9o9_wnH-nLpYU9
+    id: COLUMN-N6rn5i2yj1W8pjN3uUFTO
+    meta:
+      background: BACKGROUND_TRANSPARENT
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-R1e9BXo04r8_GxdItfimQ
+    type: COLUMN
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-R1e9BXo04r8_GxdItfimQ
+    - ROW-26ep0yWxOgwTnbQaGwhKy
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: Sector Sensitivity to ECB Interest Rates (%)
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-26ep0yWxOgwTnbQaGwhKy:
+    children:
+    - CHART-explore-1-1
+    - CHART-explore-3-1
+    id: ROW-26ep0yWxOgwTnbQaGwhKy
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-M2UkDxX9o9_wnH-nLpYU9:
+    children:
+    - CHART-explore-2-1
+    id: ROW-M2UkDxX9o9_wnH-nLpYU9
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-R1e9BXo04r8_GxdItfimQ
+    - COLUMN-N6rn5i2yj1W8pjN3uUFTO
+    type: ROW
+  ROW-R1e9BXo04r8_GxdItfimQ:
+    children:
+    - COLUMN-N6rn5i2yj1W8pjN3uUFTO
+    - CHART-explore-4-1
+    id: ROW-R1e9BXo04r8_GxdItfimQ
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+metadata:
+  color_scheme_domain: []
+  shared_label_colors:
+  - Automobiles & Parts
+  - Banks
+  - Basic Resources
+  - Chemicals
+  - Construction & Materials
+  - Financial Services
+  - Food & Beverage
+  - Health Care
+  - Industrial Goods & Services
+  - Insurance
+  - Media
+  - Oil & Gas
+  - Personal & Household Goods
+  - Real Estate
+  - Retail
+  - Technology
+  - Telecommunications
+  - Travel & Leisure
+  - Utilities
+  map_label_colors:
+    AVG(beta): '#41ED86'
+    Real Estate: '#9EE5E5'
+    Basic Resources: '#3CCCCB'
+    Financial Services: '#E04355'
+    Food & Beverage: '#FCC700'
+    Personal & Household Goods: '#5AC189'
+    Chemicals: '#1FA8C9'
+    Telecommunications: '#FDE380'
+    Travel & Leisure: '#EFA1AA'
+    Construction & Materials: '#A868B7'
+    Health Care: '#454E7C'
+    Automobiles & Parts: '#A38F79'
+    Oil & Gas: '#FEC0A1'
+    Media: '#B2B2B2'
+    Utilities: '#8FD3E4'
+    Insurance: '#ACE1C4'
+    Technology: '#666666'
+    Industrial Goods & Services: '#FF7F44'
+    Retail: '#A1A6BD'
+    Banks: '#D3B3DA'
+    AVG(ecb_rate_pct): '#D1C6BC'
+  label_colors: {}
+  chart_configuration:
+    '1':
+      id: 1
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 2
+        - 3
+        - 4
+    '3':
+      id: 3
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 4
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 1
+    - 2
+    - 3
+    - 4
+  color_scheme: ''
+  refresh_frequency: 0
+  expanded_slices: {}
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: true
+  default_filters: '{}'
+theme_uuid: null
+version: 1.0.0

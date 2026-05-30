@@ -1,0 +1,14 @@
+database_name: Our_Database_Display_Name
+sqlalchemy_uri: postgresql+psycopg2://__POSTGRES_USER__:__POSTGRES_PASSWORD__@__POSTGRES_HOST__:__POSTGRES_PORT__/__POSTGRES_DB__
+cache_timeout: null
+expose_in_sqllab: true
+allow_run_async: false
+allow_ctas: false
+allow_cvas: false
+allow_dml: false
+allow_file_upload: false
+extra:
+  allows_virtual_table_explore: true
+impersonate_user: false
+uuid: 5971fd50-4c93-47a4-911e-47ee7c2a9d41
+version: 1.0.0
