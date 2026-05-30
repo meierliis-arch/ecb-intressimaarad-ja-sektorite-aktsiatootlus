@@ -224,9 +224,18 @@ def laadi_indeksite_hinnad(**context):
     run_id = _start_run(hook, "yfinance")
     now = datetime.now(timezone.utc)
 
-    # Loome sessiooni, mis kannab browser-sarnaseid päiseid — vähendab Yahoo blokke.
-    # Session edastatakse yf.Ticker-ile, et see tegelikult kasutusel oleks.
-    custom_session = _http_session()
+    # curl_cffi on installitud _PIP_ADDITIONAL_REQUIREMENTS kaudu.
+    # yfinance 0.2.37+ tuvastab curl_cffi automaatselt ja kasutab Chrome TLS-kätlust (ei pea käsitsi edastama)
+    # Prior plain request (http_session) does a distinct Python handshake (TLS - transport layer security) 
+    # curl_cffi instead uses actual Chrome's TLS implementation, so the handshake is genuine and FY cant make difference on protocol level
+    # # impersonate='chrome120' means "pretend to be Chrome" 
+
+    # curl_cffi
+    try:
+        import curl_cffi  # noqa: F401
+        print(f"curl_cffi {curl_cffi.__version__} on saadaval — yfinance kasutab Chrome TLS automaatselt")
+    except ImportError:
+        print("HOIATUS: curl_cffi ei ole installitud — Yahoo võib blokeerida päringuid")
 
     MAX_TICKER_ATTEMPTS = 3
 
@@ -247,7 +256,7 @@ def laadi_indeksite_hinnad(**context):
             df = None
             for attempt in range(MAX_TICKER_ATTEMPTS):
                 try:
-                    yf_ticker = yf.Ticker(ticker, session=custom_session)
+                    yf_ticker = yf.Ticker(ticker)
                     df = yf_ticker.history(
                         start=str(start),
                         end=str(end),
@@ -258,7 +267,7 @@ def laadi_indeksite_hinnad(**context):
                     break
                 except Exception as exc:
                     if attempt < MAX_TICKER_ATTEMPTS - 1:
-                        delay = 5 * (2 ** attempt)
+                        delay = 4 * (2 ** attempt)
                         print(
                             f"HOIATUS: {ticker} katse {attempt + 1}/{MAX_TICKER_ATTEMPTS} "
                             f"ebaõnnestus: {exc}. Ootan {delay}s..."
