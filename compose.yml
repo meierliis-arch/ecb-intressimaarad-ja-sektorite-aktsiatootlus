@@ -236,6 +236,7 @@ services:
       - /bin/sh
       - -c
       - |
+        . /app/.venv/bin/activate && \
         superset db upgrade && \
         (superset fab create-admin \
           --username $${ADMIN_USERNAME} \
@@ -277,6 +278,7 @@ services:
       - /bin/sh
       - -c
       - |
+        . /app/.venv/bin/activate && \
         python /app/superset/zip_dashboard.py /app/superset/dashboard_export /tmp/dashboard.zip && \
         superset import-dashboards --path /tmp/dashboard.zip --username $${SUPERSET_ADMIN_USER}
     restart: "no"
