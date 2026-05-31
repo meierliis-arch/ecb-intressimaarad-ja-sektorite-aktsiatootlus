@@ -15,7 +15,7 @@ Kuidas reageerivad Euroopa aktsiaturu sektorid EKP intressimäära muutustele ja
 
 | Allikas | Tüüp | Ajas muutuv? | Roll |
 |---------|------|--------------|------|
-| ECB Data Portal | Avalik REST API, CSV | Jah, intressiotsuste korral (~8× aastas) | EKP hoiustamise püsivõimaluse intressimäära ajalugu |
+| ECB Data Portal | Avalik REST API, XML | Jah, intressiotsuste korral (~8× aastas) | EKP hoiustamise püsivõimaluse intressimäära ajalugu |
 | Yahoo Finance | `yfinance` Pythoni pakett | Jah, iga kauplemispäev | 19 STOXX Europe 600 sektori ETF-i päevahinnad (XETRA) |
 | `seeds/dim_sectors.csv` | Staatiline dbt seeme | Ei, muutub ainult projekti muutmisel | ETF-i tickerid koos kehtivusperioodiga |
 
