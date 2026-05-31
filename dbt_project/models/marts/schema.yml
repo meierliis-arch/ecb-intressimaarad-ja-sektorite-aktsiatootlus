@@ -13,6 +13,8 @@ models:
         tests: [not_null]
       - name: close_price
         tests: [not_null]
+      - name: indexed_close_price
+        tests: [not_null]
 
   - name: mart_post_event_returns
     description: >
