@@ -25,7 +25,7 @@ position:
     children: []
     id: CHART-explore-2-1
     meta:
-      chartId: 2
+      chartId: 3
       height: 18
       sliceName: ECB interest rate
       uuid: 3b139eae-aa3d-4034-ab5a-859d8a30549b
@@ -41,8 +41,8 @@ position:
     children: []
     id: CHART-explore-3-1
     meta:
-      chartId: 3
-      height: 50
+      chartId: 2
+      height: 107
       sliceName: Dynamics of Indice Prices & ECB rates
       uuid: ca87afdc-16e0-468e-ba17-f4a90ece6895
       width: 8
@@ -63,7 +63,7 @@ position:
     parents:
     - ROOT_ID
     - GRID_ID
-    - ROW-ftkFfkgYcCJOu7XyOrOWV
+    - ROW-R1e9BXo04r8_GxdItfimQ
     type: CHART
   COLUMN-N6rn5i2yj1W8pjN3uUFTO:
     children:
@@ -153,7 +153,6 @@ metadata:
   - Travel & Leisure
   - Utilities
   map_label_colors:
-    AVG(beta): '#41ED86'
     Real Estate: '#9EE5E5'
     Basic Resources: '#3CCCCB'
     Financial Services: '#E04355'
@@ -174,6 +173,7 @@ metadata:
     Retail: '#A1A6BD'
     Banks: '#D3B3DA'
     AVG(ecb_rate_pct): '#D1C6BC'
+    AVG(beta): '#41ED86'
   label_colors: {}
   chart_configuration:
     '1':
@@ -184,13 +184,13 @@ metadata:
         - 2
         - 3
         - 4
-    '3':
-      id: 3
+    '2':
+      id: 2
       crossFilters:
         scope: global
         chartsInScope:
         - 1
-        - 2
+        - 3
         - 4
   global_chart_configuration:
     scope:
@@ -207,6 +207,7 @@ metadata:
   expanded_slices: {}
   timed_refresh_immune_slices: []
   cross_filters_enabled: true
+  native_filter_configuration: []
   default_filters: '{}'
 theme_uuid: null
 version: 1.0.0

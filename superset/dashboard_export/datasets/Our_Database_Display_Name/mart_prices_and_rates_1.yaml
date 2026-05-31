@@ -6,7 +6,7 @@ offset: 0
 cache_timeout: null
 catalog: praktikum
 schema: marts
-sql: null
+sql: ''
 params: null
 template_params: null
 filter_select_enabled: true
@@ -24,7 +24,8 @@ metrics:
   description: null
   d3format: null
   currency: null
-  extra: null
+  extra:
+    warning_markdown: ''
   warning_text: null
 columns:
 - column_name: close_price
@@ -35,10 +36,10 @@ columns:
   advanced_data_type: null
   groupby: true
   filterable: true
-  expression: null
+  expression: ''
   description: null
   python_date_format: null
-  extra: null
+  extra: {}
 - column_name: ecb_rate_pct
   verbose_name: null
   is_dttm: false
@@ -47,10 +48,10 @@ columns:
   advanced_data_type: null
   groupby: true
   filterable: true
-  expression: null
+  expression: ''
   description: null
   python_date_format: null
-  extra: null
+  extra: {}
 - column_name: effective_rate_date
   verbose_name: null
   is_dttm: true
@@ -59,10 +60,10 @@ columns:
   advanced_data_type: null
   groupby: true
   filterable: true
-  expression: null
+  expression: ''
   description: null
   python_date_format: null
-  extra: null
+  extra: {}
 - column_name: price_date
   verbose_name: null
   is_dttm: true
@@ -71,10 +72,22 @@ columns:
   advanced_data_type: null
   groupby: true
   filterable: true
-  expression: null
+  expression: ''
   description: null
   python_date_format: null
-  extra: null
+  extra: {}
+- column_name: indexed_close_price
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: NUMERIC
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
 - column_name: sector_name
   verbose_name: null
   is_dttm: false
@@ -83,10 +96,10 @@ columns:
   advanced_data_type: null
   groupby: true
   filterable: true
-  expression: null
+  expression: ''
   description: null
   python_date_format: null
-  extra: null
+  extra: {}
 - column_name: ticker
   verbose_name: null
   is_dttm: false
@@ -95,9 +108,9 @@ columns:
   advanced_data_type: null
   groupby: true
   filterable: true
-  expression: null
+  expression: ''
   description: null
   python_date_format: null
-  extra: null
+  extra: {}
 version: 1.0.0
 database_uuid: 5971fd50-4c93-47a4-911e-47ee7c2a9d41
