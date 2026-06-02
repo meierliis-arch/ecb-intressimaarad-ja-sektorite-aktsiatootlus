@@ -1,9 +1,7 @@
 
     
     
-    
-    create table "praktikum"."marts"."dim_sectors" ("ticker" text,"sector_name" text,"valid_from" date,"valid_to" date)
-  ;
+    truncate table "praktikum"."marts"."dim_sectors";
     -- dbt seed --
     
           insert into "praktikum"."marts"."dim_sectors" ("ticker", "sector_name", "valid_from", "valid_to") values

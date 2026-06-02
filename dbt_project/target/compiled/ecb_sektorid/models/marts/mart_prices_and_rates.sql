@@ -26,6 +26,18 @@ select
     p.ticker,
     s.sector_name,
     p.close_price,
+     round(
+        p.close_price
+        / nullif(
+            first_value(p.close_price) over (
+                partition by p.ticker
+                order by p.price_date
+            ),
+            0
+        )
+        * 100,
+        4
+    ) as indexed_close_price,
     r.ecb_rate_pct,
     r.effective_rate_date
 from prices p
