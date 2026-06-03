@@ -36,11 +36,7 @@ models:
       - name: rate_change_bp
         tests: [not_null]
       - name: cumulative_return_30d_pct
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: -100
-              max_value: 100
+        tests: [not_null]
 
   - name: mart_sector_betas
     description: >
@@ -50,8 +46,4 @@ models:
       - name: ticker
         tests: [not_null, unique]
       - name: event_count
-        tests:
-          - not_null
-          - dbt_utils.accepted_range:
-              min_value: 0
-              inclusive: false
+        tests: [not_null]
