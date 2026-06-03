@@ -62,6 +62,7 @@ POSTGRES_CONN_ID = "analytics_db"
 
 # dbt käsud (käivitatakse BashOperatoriga Airflow konteineris)
 DBT_DIR = "/opt/airflow/dbt_project"
+DBT_DEPS_CMD = f"cd {DBT_DIR} && dbt deps --profiles-dir ."
 DBT_SEED_CMD = f"cd {DBT_DIR} && dbt seed --profiles-dir ."
 DBT_RUN_CMD  = f"cd {DBT_DIR} && dbt run --profiles-dir ."
 DBT_TEST_CMD = f"cd {DBT_DIR} && dbt test --profiles-dir ."
@@ -364,6 +365,14 @@ with DAG(
 ) as dag:
 
     # -------------------------------------------------------------------------
+    # dbt deps: paigaldab packages.yml failis kirjeldatud dbt paketid
+    # -------------------------------------------------------------------------
+    dbt_deps = BashOperator(
+        task_id="dbt_deps",
+        bash_command=DBT_DEPS_CMD,
+    )
+
+    # -------------------------------------------------------------------------
     # dbt seed: laadib seeds/indeksid.csv → marts.dim_indeksid
     # Peab käivituma enne andmete tõmbamist, et tickerid oleks DB-s saadaval
     # -------------------------------------------------------------------------
@@ -406,6 +415,6 @@ with DAG(
 
     # -------------------------------------------------------------------------
     # Sõltuvused:
-    #   dbt_seed → [ecb_task, yfinance_task] → dbt_run → dbt_test
+    #   dbt_deps → dbt_seed → [ecb_task, yfinance_task] → dbt_run → dbt_test
     # -------------------------------------------------------------------------
-    dbt_seed >> [ecb_task, yfinance_task] >> dbt_run >> dbt_test
+    dbt_deps >> dbt_seed >> [ecb_task, yfinance_task] >> dbt_run >> dbt_test

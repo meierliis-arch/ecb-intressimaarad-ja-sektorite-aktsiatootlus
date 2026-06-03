@@ -13,6 +13,9 @@ models:
         description: "Deposit facility rate in percent"
         tests:
           - not_null
+          - dbt_utils.accepted_range:
+              min_value: -1
+              max_value: 15
 
   - name: stg_index_prices
     description: "Deduplicated daily closing prices for STOXX Europe 600 sector ETFs."
@@ -29,3 +32,6 @@ models:
         description: "Adjusted closing price"
         tests:
           - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: false

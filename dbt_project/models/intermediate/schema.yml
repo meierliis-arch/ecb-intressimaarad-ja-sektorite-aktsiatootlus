@@ -11,7 +11,11 @@ models:
       - name: price_date
         tests: [not_null]
       - name: daily_return_pct
-        tests: [not_null]
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: -50
+              max_value: 50
 
   - name: int_aligned_ecb_rates
     description: >
@@ -21,4 +25,8 @@ models:
       - name: price_date
         tests: [not_null, unique]
       - name: ecb_rate_pct
-        tests: [not_null]
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: -1
+              max_value: 15

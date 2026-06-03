@@ -12,9 +12,17 @@ models:
       - name: ticker
         tests: [not_null]
       - name: close_price
-        tests: [not_null]
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: false
       - name: indexed_close_price
-        tests: [not_null]
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: false
 
   - name: mart_post_event_returns
     description: >
@@ -28,7 +36,11 @@ models:
       - name: rate_change_bp
         tests: [not_null]
       - name: cumulative_return_30d_pct
-        tests: [not_null]
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: -100
+              max_value: 100
 
   - name: mart_sector_betas
     description: >
@@ -38,4 +50,8 @@ models:
       - name: ticker
         tests: [not_null, unique]
       - name: event_count
-        tests: [not_null]
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: false
