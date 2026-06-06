@@ -19,7 +19,8 @@ position:
     parents:
     - ROOT_ID
     - GRID_ID
-    - ROW-26ep0yWxOgwTnbQaGwhKy
+    - ROW-R1e9BXo04r8_GxdItfimQ
+    - COLUMN-N6rn5i2yj1W8pjN3uUFTO
     type: CHART
   CHART-explore-2-1:
     children: []
@@ -27,9 +28,9 @@ position:
     meta:
       chartId: 3
       height: 18
-      sliceName: ECB interest rate
+      sliceName: "ECB hoiustamise p\xFCsiv\xF5imaluse intressim\xE4\xE4r"
       uuid: 3b139eae-aa3d-4034-ab5a-859d8a30549b
-      width: 4
+      width: 3
     parents:
     - ROOT_ID
     - GRID_ID
@@ -45,21 +46,21 @@ position:
       height: 107
       sliceName: Dynamics of Indice Prices & ECB rates
       uuid: ca87afdc-16e0-468e-ba17-f4a90ece6895
-      width: 8
+      width: 12
     parents:
     - ROOT_ID
     - GRID_ID
     - ROW-26ep0yWxOgwTnbQaGwhKy
     type: CHART
-  CHART-explore-4-1:
+  CHART-wwkS4xQgvIBBNQkOGWo4W:
     children: []
-    id: CHART-explore-4-1
+    id: CHART-wwkS4xQgvIBBNQkOGWo4W
     meta:
-      chartId: 4
-      height: 50
-      sliceName: Sector Price Change to Betas
-      uuid: 84cf5b3f-176e-4731-82be-e22d2e31568a
-      width: 8
+      chartId: 5
+      height: 70
+      sliceName: "Keskmine 30 p\xE4eva tootlus intressimuutuse j\xE4rel"
+      uuid: bdbd8086-74a1-44e1-9149-90fd6333d2b4
+      width: 9
     parents:
     - ROOT_ID
     - GRID_ID
@@ -68,10 +69,11 @@ position:
   COLUMN-N6rn5i2yj1W8pjN3uUFTO:
     children:
     - ROW-M2UkDxX9o9_wnH-nLpYU9
+    - CHART-explore-1-1
     id: COLUMN-N6rn5i2yj1W8pjN3uUFTO
     meta:
       background: BACKGROUND_TRANSPARENT
-      width: 4
+      width: 3
     parents:
     - ROOT_ID
     - GRID_ID
@@ -98,7 +100,6 @@ position:
     type: ROOT
   ROW-26ep0yWxOgwTnbQaGwhKy:
     children:
-    - CHART-explore-1-1
     - CHART-explore-3-1
     id: ROW-26ep0yWxOgwTnbQaGwhKy
     meta:
@@ -122,7 +123,7 @@ position:
   ROW-R1e9BXo04r8_GxdItfimQ:
     children:
     - COLUMN-N6rn5i2yj1W8pjN3uUFTO
-    - CHART-explore-4-1
+    - CHART-wwkS4xQgvIBBNQkOGWo4W
     id: ROW-R1e9BXo04r8_GxdItfimQ
     meta:
       background: BACKGROUND_TRANSPARENT
@@ -132,48 +133,31 @@ position:
     type: ROW
 metadata:
   color_scheme_domain: []
-  shared_label_colors:
-  - Automobiles & Parts
-  - Banks
-  - Basic Resources
-  - Chemicals
-  - Construction & Materials
-  - Financial Services
-  - Food & Beverage
-  - Health Care
-  - Industrial Goods & Services
-  - Insurance
-  - Media
-  - Oil & Gas
-  - Personal & Household Goods
-  - Real Estate
-  - Retail
-  - Technology
-  - Telecommunications
-  - Travel & Leisure
-  - Utilities
+  shared_label_colors: []
   map_label_colors:
-    Real Estate: '#9EE5E5'
-    Basic Resources: '#3CCCCB'
-    Financial Services: '#E04355'
-    Food & Beverage: '#FCC700'
-    Personal & Household Goods: '#5AC189'
-    Chemicals: '#1FA8C9'
-    Telecommunications: '#FDE380'
-    Travel & Leisure: '#EFA1AA'
-    Construction & Materials: '#A868B7'
-    Health Care: '#454E7C'
-    Automobiles & Parts: '#A38F79'
-    Oil & Gas: '#FEC0A1'
-    Media: '#B2B2B2'
-    Utilities: '#8FD3E4'
-    Insurance: '#ACE1C4'
-    Technology: '#666666'
-    Industrial Goods & Services: '#FF7F44'
-    Retail: '#A1A6BD'
-    Banks: '#D3B3DA'
-    AVG(ecb_rate_pct): '#D1C6BC'
     AVG(beta): '#41ED86'
+    Rate hike: '#1FA8C9'
+    Rate cut: '#454E7C'
+    Banks: '#D3B3DA'
+    Oil & Gas: '#FEC0A1'
+    Insurance: '#ACE1C4'
+    Media: '#B2B2B2'
+    Health Care: '#454E7C'
+    Utilities: '#8FD3E4'
+    Industrial Goods & Services: '#FF7F44'
+    Construction & Materials: '#A868B7'
+    Financial Services: '#E04355'
+    Basic Resources: '#3CCCCB'
+    Technology: '#666666'
+    Telecommunications: '#FDE380'
+    Chemicals: '#1FA8C9'
+    Personal & Household Goods: '#5AC189'
+    Food & Beverage: '#FCC700'
+    Automobiles & Parts: '#A38F79'
+    Travel & Leisure: '#EFA1AA'
+    Retail: '#A1A6BD'
+    Real Estate: '#9EE5E5'
+    AVG(ecb_rate_pct): '#D1C6BC'
   label_colors: {}
   chart_configuration:
     '1':
@@ -183,7 +167,7 @@ metadata:
         chartsInScope:
         - 2
         - 3
-        - 4
+        - 5
     '2':
       id: 2
       crossFilters:
@@ -191,7 +175,15 @@ metadata:
         chartsInScope:
         - 1
         - 3
-        - 4
+        - 5
+    '5':
+      id: 5
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 3
   global_chart_configuration:
     scope:
       rootPath:
@@ -201,7 +193,7 @@ metadata:
     - 1
     - 2
     - 3
-    - 4
+    - 5
   color_scheme: ''
   refresh_frequency: 0
   expanded_slices: {}

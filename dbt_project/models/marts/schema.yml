@@ -37,6 +37,11 @@ models:
         tests: [not_null]
       - name: cumulative_return_30d_pct
         tests: [not_null]
+      - name: rate_change_direction
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Rate hike', 'Rate cut']
 
   - name: mart_sector_betas
     description: >
