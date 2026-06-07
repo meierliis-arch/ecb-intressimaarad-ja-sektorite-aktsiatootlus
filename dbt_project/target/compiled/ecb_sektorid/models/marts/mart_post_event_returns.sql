@@ -75,6 +75,10 @@ select
     a.rate_pct,
     a.prev_rate_pct,
     a.rate_change_bp,
+    case
+        when a.rate_change_bp > 0 then 'Rate hike'
+        when a.rate_change_bp < 0 then 'Rate cut'
+    end as rate_change_direction, 
     a.ticker,
     s.sector_name,
     a.trading_days_in_window,

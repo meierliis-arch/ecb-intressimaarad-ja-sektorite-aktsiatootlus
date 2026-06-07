@@ -28,6 +28,11 @@ models:
     description: >
       Metric 2: Cumulative sector returns in the 30 calendar days following
       each ECB deposit facility rate change. One row per (event_date, ticker).
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - event_date
+            - ticker
     columns:
       - name: event_date
         tests: [not_null]

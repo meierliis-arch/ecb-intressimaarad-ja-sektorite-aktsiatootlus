@@ -24,6 +24,9 @@ models:
         description: "ETF ticker symbol"
         tests:
           - not_null
+          - relationships:
+              to: ref('dim_sectors')
+              field: ticker
       - name: price_date
         description: "Trading day"
         tests:
