@@ -1,4 +1,4 @@
-# ECB intressimäärad ja sektorite aktsiatootlus — Airflow + dbt + Superset
+# ECB intressimäärad ja sektorite aktsiatootlus - Airflow + dbt + Superset
 
 Projekt uurib, kuidas Euroopa Keskpanga (EKP) hoiustamise püsivõimaluse intressimäär on seotud STOXX Europe 600 sektori indeksfondide tootlustega. Andmevoog töötab täisautomaatselt: Airflow orkestreerib andmete tõmbamise ja dbt transformatsioonid, Superset kuvab tulemused.
 
@@ -7,9 +7,9 @@ Projekt uurib, kuidas Euroopa Keskpanga (EKP) hoiustamise püsivõimaluse intres
 Kuidas reageerivad Euroopa aktsiaturu sektorid EKP intressimäära muutustele ja kui suur on see reaktsioon?
 
 **Mõõdikud:**
-1. Kirjeldav aegrida — sektori sulgemishinnad ja intressimäär samal teljel vaadeldaval perioodil
+1. Kirjeldav aegrida - sektori sulgemishinnad ja intressimäär samal teljel vaadeldaval perioodil
 2. Keskmised 30-päeva tootlused pärast iga EKP intressiotsust (tõus vs. langus)
-3. Beetakoefitsiendid (OLS regressioon) — üks arv sektori kohta: kui palju muutub sektori 30-päeva tootlus 1 baaspunkti suuruse intressimuutuse korral
+3. Beetakoefitsiendid (OLS regressioon) - üks arv sektori kohta: kui palju muutub sektori 30-päeva tootlus 1 baaspunkti suuruse intressimuutuse korral
 
 ## Andmestik
 
@@ -29,16 +29,16 @@ Kuidas reageerivad Euroopa aktsiaturu sektorid EKP intressimäära muutustele ja
 | Näidikulaud | Apache Superset 6.x |
 | Infrastruktuur | Docker Compose |
 
-Kõik komponendid käivituvad Dockeris — dbt ega Airflow'i ei pea kohalikult paigaldama.
+Kõik komponendid käivituvad Dockeris - dbt ega Airflow'i ei pea kohalikult paigaldama.
 
 ## Andmevoog lühidalt
 
-1. **Seed andmete laadimine** — `dbt seed` laadib `dim_sectors.csv` → `marts.dim_sectors` (19 aktiivset tickerit).
-2. **Sissevõtt (paralleelselt)** — Airflow tõmbab ECB intressimäärad REST API-st ja Yahoo Finance'ist ETF-ide päevahinnad.
-3. **Laadimine** — Andmed kirjutatakse staging toorandmete tabelitesse (`append-only`; iga käivitus saab unikaalse `run_id`).
-4. **Transformatsioon** — `dbt run` ehitab staging vaated → intermediate vaated → marts tabelid.
-5. **Testimine** — `dbt test` kontrollib andmekvaliteeti; ebaõnnestumine märgib Airflow töövoo punaseks.
-6. **Näidikulaud** — Superset loeb `marts.*` tabeleid ja näitab kolme ärimõõdikut.
+1. **Seed andmete laadimine** - `dbt seed` laadib `dim_sectors.csv` → `marts.dim_sectors` (19 aktiivset tickerit).
+2. **Sissevõtt (paralleelselt)** - Airflow tõmbab ECB intressimäärad REST API-st ja Yahoo Finance'ist ETF-ide päevahinnad.
+3. **Laadimine** - Andmed kirjutatakse staging toorandmete tabelitesse (`append-only`; iga käivitus saab unikaalse `run_id`).
+4. **Transformatsioon** - `dbt run` ehitab staging vaated → intermediate vaated → marts tabelid.
+5. **Testimine** - `dbt test` kontrollib andmekvaliteeti; ebaõnnestumine märgib Airflow töövoo punaseks.
+6. **Näidikulaud** - Superset loeb `marts.*` tabeleid ja näitab kolme ärimõõdikut.
 
 ## Andmevoog
 
@@ -102,12 +102,12 @@ Superset näidikulaud
 │           ├── mart_sector_betas.sql        ← mõõdik 3: OLS beeta sektori kohta
 │           └── schema.yml
 ├── superset/
-│   ├── superset_config.py
-│   └── dashboard_export.zip           ← valmis näidikulaud (imporditav Superseti kaudu)
+│   ├── superset_config.py             ← Superseti seadistus (loeb keskkonnamuutujad)
+│   ├── zip_dashboard.py               ← ehitab YAML-idest ZIP-i ja asendab kohatäitjad
+│   └── dashboard_export/              ← näidikulaua definitsioon YAML-idena (chartid, dataset'id, ühendus)
 └── docs/
-    ├── arhitektuur.md
-    ├── getting-started.md
-    └── project-overview.md
+    ├── arhitektuur.md                 ← arhitektuur ja otsused
+    └── progress.md                    ← edenemisraport
 ```
 
 ## Käivitamine
@@ -116,7 +116,7 @@ Superset näidikulaud
 # 1. Kopeeri keskkonnamuutujad
 cp .env.example .env
 
-# 2. Ava `.env` tekstiredaktoris ja **genereeri turvaline SECRET_KEY Superseti jaoks** — ilma selleta Superset ei käivitu:
+# 2. Ava `.env` tekstiredaktoris ja **genereeri turvaline SECRET_KEY Superseti jaoks** - ilma selleta Superset ei käivitu:
 python3 -c "import secrets; print(secrets.token_hex(32))"
 
 # 3. Asenda `.env` failis `CHANGE_ME_generate_with_python_secrets` genereeritud väärtusega.
@@ -132,11 +132,9 @@ docker compose up -d --build
 
 # 6. Ava Superset
 #    http://localhost:8088  (kasutaja/parool: vt .env SUPERSET_ADMIN_USER/PASSWORD)
-#    Loo ühendus analytics-db andmebaasiga:"
-#       Settings > Database Connections > + Database"
-#       SQLAlchemy URI: postgresql+psycopg2://praktikum:praktikum@analytics-db:5432/praktikum
-#    Lae üles superset/dashboard_export.zip fail, parool: {POSTGRES_PASSWORD}
-#    Kui teed muudatusi dashboardis, tuleks see uuesti exportida -> kirjutada üle vana .zip fail -> commitida reposse.
+#    Näidikulaud JA andmebaasi ühendus imporditakse AUTOMAATSELT Dockeri käivitamisel
+#    (superset-import teenus) - käsitsi midagi üles laadima ei pea.
+#    Kui näidikulaud veel ei ilmu, oota ~1 min, kuni superset-import lõpetab (docker compose ps).
 ```
 
 ## Saladused ja konfiguratsioon
@@ -147,21 +145,23 @@ Kõik paroolid ja võtmed on `.env` failis. Reposse läheb ainult `.env.example`
 |---------|----------|
 | `POSTGRES_PASSWORD` | Analüütika andmebaasi parool |
 | `AIRFLOW_USER` / `AIRFLOW_PASSWORD` | Airflow UI sisselogimine |
-| `SUPERSET_SECRET_KEY` | Superseti sessiooniküpsiste krüptovõti — **genereeri uus**, ära jäta vaikeväärtust |
+| `SUPERSET_SECRET_KEY` | Superseti sessiooniküpsiste krüptovõti - **genereeri uus**, ära jäta vaikeväärtust |
 | `SUPERSET_ADMIN_USER` / `SUPERSET_ADMIN_PASSWORD` | Superseti halduskasutaja |
 | `SUPERSET_DB_PASSWORD` | Superseti metaandmebaasi parool |
-| `AIRFLOW_UID` | Airflow konteineri kasutaja UID — Linuxis sea `$(id -u)` |
+| `AIRFLOW_UID` | Airflow konteineri kasutaja UID - Linuxis sea `$(id -u)` |
 
 ## Andmekvaliteedi testid
 
-`dbt test` käivitub automaatselt iga DAG-käivituse lõpus. Testide ebaõnnestumine märgib Airflow töövoo punaseks.
+`dbt test` käivitub automaatselt iga DAG-käivituse lõpus. Testide ebaõnnestumine märgib Airflow töövoo punaseks. Testid on defineeritud mudelite `schema.yml` failides:
 
-Kõigi mudelite `schema.yml` failides on konfigureeritud `not_null` ja `unique` testid põhivõtmete ning kriitiliste veergude jaoks (`date_ref`, `rate_pct`, `ticker`, `price_date`, `close_price`).
+1. **`not_null`** - põhivõtmed ja kriitilised veerud (`date_ref`, `rate_pct`, `ticker`, `price_date`, `close_price`, tootlused jne).
+2. **`unique`** - `stg_ecb_rates.date_ref`, `int_aligned_ecb_rates.price_date`, `mart_sector_betas.ticker`.
+3. **`accepted_range`** (dbt_utils) - intressimäär vahemikus −1…15 % (`rate_pct`, `ecb_rate_pct`); hinnad > 0 (`close_price`, `indexed_close_price`).
+4. **`accepted_values`** - `mart_post_event_returns.rate_change_direction` ∈ {`Rate hike`, `Rate cut`}.
+5. **`unique_combination_of_columns`** (dbt_utils) - `mart_post_event_returns` grain `(event_date, ticker)` on unikaalne.
+6. **`relationships`** - iga `stg_index_prices.ticker` peab leiduma `dim_sectors` seemnes (viiteterviklus).
 
-**Planeeritud laiendused** (vastutaja: Kerttu):
-- Kombineeritud unikaalsuse testid — nt `(event_date, ticker)` tabelis `mart_post_event_returns`
-- Väärtuste vahemiku testid — nt intressimäär vahemikus −1 kuni 15 protsenti
-- Mudelivahelised seosete testid (`relationships`)
+> Algselt planeeritud laiendused (kombineeritud unikaalsus, väärtuste vahemikud, `relationships`) on nüüd kõik teostatud. Kvaliteedi omanik: Kerttu.
 
 ## dbt käsud (käsitsi käivitamiseks)
 
@@ -180,29 +180,24 @@ dbt docs generate --profiles-dir .   # genereerib dokumentatsiooni
 
 ## Superset seadistus
 
-Kui DAG on vähemalt korra edukalt läbi jooksnud:
+**Näidikulaud avaneb automaatselt** - käsitsi seadistust pole vaja. `docker compose up` käivitab `superset-import` teenuse *enne* Superseti serverit, mis:
 
-### 1. Lisa andmebaasi ühendus
+1. ehitab `superset/dashboard_export/` YAML-failidest ZIP-i (`zip_dashboard.py`) ja asendab kohatäitjad (nt andmebaasi parool `.env` failist);
+2. käivitab `superset import-dashboards`, mis laadib Superseti nii **andmebaasi ühenduse** (`analytics-db`) kui ka **näidikulaua kõigi kolme mõõdikuga**.
 
-**Settings → Database Connections → + Database → PostgreSQL**
+Ava http://localhost:8088 (kasutaja/parool: vt `.env` `SUPERSET_ADMIN_USER`/`PASSWORD`) - näidikulaud on kohe nähtav.
 
-Sisesta ühendusstring:
+### Näidikulaua muutmine ja reposse salvestamine
 
+Kui muudad näidikulauda Supersetis ja soovid muudatuse alles hoida, ekspordi see tagasi YAML-ideks:
+
+```bash
+docker compose exec superset bash -c "superset export-dashboards -f /tmp/dashboard.zip"
+docker compose cp superset:/tmp/dashboard.zip ./dashboard.zip
+# Paki ZIP lahti superset/dashboard_export/ kausta ja commiti muudatused.
 ```
-postgresql://praktikum:praktikum@ecb-analytics-db:5432/praktikum
-```
 
-> Host on `ecb-analytics-db` (konteineri nimi), mitte `localhost` — Superset ja andmebaas on samas Dockeri võrgus.
-
-Vajuta **Test Connection** (peaks andma „Connection looks good!") → **Connect**.
-
-### 2. Impordi näidikulaud
-
-Valmis näidikulaud on reposis (`superset/dashboard_export.zip`).
-
-**Settings → Import dashboards → Upload ZIP file** → vali `superset/dashboard_export.zip` → **Import**.
-
-### 3. Päringud SQL Laboris
+### Päringud SQL Laboris
 
 Andmeid saab uurida ka **SQL Lab → SQL Editor**:
 
@@ -231,8 +226,11 @@ docker compose logs ecb-airflow-dag-processor
 **`laadi_indeksite_hinnad` ebaõnnestub korduvalt**
 Yahoo Finance piirab päringute sagedust. Task kordab automaatselt kuni 3 korda (10-minutilise pausiga). Kui kõik korduskatsed ebaõnnestuvad, on konkreetsed tickerid loetletud Airflow logis.
 
-**Superset näitab „Connection refused" andmebaasi testimisel**
-Veendu, et kasutasid hosti nimena `ecb-analytics-db`, mitte `localhost`.
+**Superseti näidikulaud või andmebaasi ühendus ei ilmu**
+Need imporditakse `superset-import` teenuse kaudu. Kontrolli, et see lõpetas edukalt:
+```bash
+docker compose logs ecb-superset-import
+```
 
 **Pordid 8080, 8088 või 55432 on hõivatud**
 Muuda `.env` failis vastavaid pordiväärtusi:
@@ -243,7 +241,7 @@ DB_PORT_HOST=55433
 ```
 
 **Esimene `docker compose up` võtab kaua aega**
-Normaalne — pip paigaldab dbt, yfinance ja pandas konteinerite sisse. Juhtub ainult esmakordsel ehitamisel.
+Normaalne - pip paigaldab dbt, yfinance ja pandas konteinerite sisse. Juhtub ainult esmakordsel ehitamisel.
 
 ## Tööjaotus
 
@@ -258,17 +256,21 @@ Normaalne — pip paigaldab dbt, yfinance ja pandas konteinerite sisse. Juhtub a
 
 **Mis töötab:**
 - Pipeline töötab otsast lõpuni: Airflow → staging → dbt → Superset
-- Andmete tõmbamine on inkrementaalne — iga järgnev käivitus tõmbab ainult uued kauplemispäevad
-- dbt testid kontrollivad andmekvaliteeti automaatselt iga käivituse lõpus
+- Andmete tõmbamine on inkrementaalne - iga järgnev käivitus tõmbab ainult uued kauplemispäevad
+- dbt testid (sh `accepted_range`, `accepted_values`, kombineeritud unikaalsus ja `relationships`) kontrollivad andmekvaliteeti automaatselt iga käivituse lõpus
+- Superseti näidikulaud (3 mõõdikut) ja andmebaasi ühendus imporditakse automaatselt Dockeri käivitamisel - käsitsi seadistust pole vaja
 - Airflow kordab ebaõnnestunud yfinance taskid automaatselt (kuni 3 korda, 10-minutilise pausiga)
 
 **Teadlikud piirangud:**
-- Superset näidikulaud tuleb esimesel korral käsitsi importida (ZIP-fail on repos olemas)
-- `staging.ecb_rates_raw` ja `staging.index_prices_raw` kasvavad piiramatult — vanade käivituste andmeid ei kustutata
-- dbt testide katvus on praegu minimaalne; väärtuste vahemiku ja mudelivahelised testid on lisamisel
+- `staging.ecb_rates_raw` ja `staging.index_prices_raw` kasvavad piiramatult - vanade käivituste andmeid ei kustutata
+- Yahoo Finance rate-limiting võib esimese käivituse hindade laadimist aeglustada (Airflow proovib automaatselt uuesti)
 
 **Võimalikud edasiarendused:**
 - Laiendada analüüsi teiste EKP intressimääradega (nt refinantseerimisoperatsioonide määr)
-- Automatiseerida Superseti näidikulaua importimine `docker compose up` käivitamisel
 - Lisada `staging.pipeline_runs` põhjal Airflow sensor, mis kontrollib eelmise käivituse edukust enne uue alustamist
 - Kaaluda Yahoo Finance asendamist stabiilsema andmeallikaga (nt Stooq `pandas_datareader` kaudu), kui rate-limiting osutub jätkuvaks probleemiks
+
+## Arhitektuur ja täpsemad otsused
+
+Vaata [`docs/arhitektuur.md`](docs/arhitektuur.md) - andmevoog, andmebaasi kihid, tööjaotus ja riskid.
+Projekti edenemine ja kontrollpunktid: [`docs/progress.md`](docs/progress.md).

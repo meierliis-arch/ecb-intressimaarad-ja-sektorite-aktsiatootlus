@@ -17,24 +17,29 @@ Kuidas on Euroopa Keskpanga(EKP) hoiustamise püsivõimaluse intressimäär seot
 |---------|------|-----------------------------|------|
 | Yahoo Finance | `yfinance` pythoni pakett | Jah, igal kauplemispäeval   | Sektorite indeksfondide ajalooline hinnainfo kauplemispäevadel |
 | ECB Data Portal | API/XML | Jah, intressiotsuste korral | ECB hoiustamise püsivõimaluse intressimäära muutuste ajalugu |
-| `seeds/indeksid.csv` | seed | Ei, staatiline              | STOXX Europe 600 erinevate sektorite indeksfondide sümbolid yfinance päringuteks|
+| `seeds/dim_sectors.csv` | seed | Ei, staatiline              | STOXX Europe 600 erinevate sektorite indeksfondide sümbolid yfinance päringuteks|
 
 ## Andmevoog
 
 ```mermaid
 flowchart LR
-    seeds[seeds/indeksid.csv] -->|dbt seed| dim[(marts.dim_indeksid)]
-    yf[Yahoo Finance] -->|Airflow PythonOperator| raw_p[(staging.index_price_info)]
-    ecb[ECB Data Portal] -->|Airflow PythonOperator| raw_r[(staging.ecb_deposit_rates)]
+    seeds[seeds/dim_sectors.csv] -->|dbt seed| dim[(marts.dim_sectors)]
+    yf[Yahoo Finance] -->|Airflow PythonOperator| raw_p[(staging.index_prices_raw)]
+    ecb[ECB Data Portal] -->|Airflow PythonOperator| raw_r[(staging.ecb_rates_raw)]
     raw_p -->|dbt staging| stg_p[staging.stg_index_prices]
     raw_r -->|dbt staging| stg_r[staging.stg_ecb_rates]
-    stg_p -->|dbt intermediate| int_ret[(intermediate.sector_returns)]
-    stg_r -->|dbt intermediate| int_al[(intermediate.aligned_ecb_rates)]
-    int_ret -->|dbt marts| mart_post30[(marts.post_event_returns)]
-    int_ret -->|dbt marts| mart_beta[(marts.sector_betas)]
-    int_al --> mart_post30
-    int_al --> mart_beta
-    mart_post30 --> superset[Superset näidikulaud]
+    stg_p -->|dbt intermediate| int_ret[intermediate.int_sector_returns]
+    stg_p --> int_al[intermediate.int_aligned_ecb_rates]
+    stg_r -->|dbt intermediate| int_al
+    stg_p -->|dbt marts| mart_pr[(marts.mart_prices_and_rates)]
+    int_al --> mart_pr
+    dim --> mart_pr
+    int_ret -->|dbt marts| mart_post30[(marts.mart_post_event_returns)]
+    stg_r --> mart_post30
+    dim --> mart_post30
+    mart_post30 -->|dbt marts| mart_beta[(marts.mart_sector_betas)]
+    mart_pr --> superset[Superset näidikulaud]
+    mart_post30 --> superset
     mart_beta --> superset
     airflow[Airflow scheduler] -->|"@daily"| yf
     airflow -->|"@daily"| ecb
